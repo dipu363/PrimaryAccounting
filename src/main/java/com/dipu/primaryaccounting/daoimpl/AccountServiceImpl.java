@@ -52,8 +52,8 @@ SessionFactory sessionfactory;
         Transaction t = s.getTransaction();
         t.begin();
         Accounttype actype = (Accounttype) s.get(Accounttype.class, id);
-         
-        s.delete(actype);
+        actype.setStatus("Deleted");
+        s.update(actype);
         t.commit();
         s.close();
 
