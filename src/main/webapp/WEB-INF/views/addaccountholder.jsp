@@ -252,7 +252,7 @@
 
                                             <div class="form-group">
 
-                                            <form:hidden  class="form-control" value="{{actype}}" path="at_type"></form:hidden>
+                                            <form:hidden  class="form-control" value="{{type}}" path="at_type"></form:hidden>
                                             </div>                  
 
                                         </div>
