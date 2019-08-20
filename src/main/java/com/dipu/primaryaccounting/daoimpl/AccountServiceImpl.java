@@ -62,16 +62,17 @@ SessionFactory sessionfactory;
 
     @Override
     public String viewAccounttype() {
-        String status = "Active";
+      
      Session s = sessionfactory.openSession();
         Transaction t = s.getTransaction();
         t.begin();
-        List<Accounttype> accountlist = s.createQuery("from Accounttype where status = status").list();
+        //if show data like status then write this coad ; or seccond line
+       // List<Accounttype> accountlist = s.createQuery("from Accounttype where status ='Active'").list();
+         List<Accounttype> accountlist = s.createQuery("from Accounttype").list();
         Gson g = new Gson();
         String accountlistgson = g.toJson(accountlist);
         t.commit();
         s.close();
-        //System.out.println(categorylistgson);
         return accountlistgson;
     }
 
