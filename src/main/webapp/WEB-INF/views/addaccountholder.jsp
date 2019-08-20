@@ -37,7 +37,7 @@
 
 
 
-                angular.module('myapp', []).controller('typecontrl',
+                angular.module('myapp', []).controller('addtypecontrl',
                         function ($scope) {
                             $scope.acctypelists = typelist;
 
@@ -136,7 +136,7 @@
 
             <div id="content-wrapper">
 
-                <div class="container-fluid" ng-app="myapp" ng-controller="typecontrl">
+                <div class="container-fluid">
 
                     <!-- Breadcrumbs-->
                     <div class="row">
@@ -158,9 +158,9 @@
                     </div>
                   
                     <!-- end panel heading -->
-                    <div class="panel-body" >
+                    <div class="panel-body" ng-app="myapp" ng-controller="addtypecontrl" >
                         <div class="formcontainer ">
-                            <c:if test="${!check}">
+                            <c:if test="${check}">
                                 <form:form name="acholderModel"
                                            modelAttribute="addaccountModelobject" action="accounttype"
                                            method="post">
@@ -172,7 +172,7 @@
                                         </div>
                                          <div class="form-group col-sm-6">
                                            
-                                            <select class="form-control" ng-model="type" required="true">
+                                             <select class="form-control" ng-model="edittype" required="true">
                                                 <option value="">--Select Gender --</option>
                                                 <option value="Customer"> Customer</option>
                                                 <option value="Supplier"> Supplier</option>
@@ -181,7 +181,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                        <form:hidden  class="form-control" value="{{type}}" path="at_type"></form:hidden>
+                                        <form:hidden  class="form-control" value="{{edittype}}" path="at_type"></form:hidden>
                                         </div>                
 
                                         </div>
@@ -220,7 +220,7 @@
                                         </div>
                                 </form:form>
                             </c:if>
-                            <c:if test="${check}">
+                            <c:if test="${!check}">
                                 <form:form name="acholderModel"
                                            modelAttribute="addaccountModelobject" action="accounttype"
                                            method="post">
@@ -241,7 +241,7 @@
                                         </div>
                                          <div class="form-group col-sm-6">
                                            
-                                            <select class="form-control" ng-model="type" required="true">
+                                             <select class="form-control"ng-model="edittype" required="true">
                                                 <option value="">--Select Gender --</option>
                                                 <option value="Customer"> Customer</option>
                                                 <option value="Supplier"> Supplier</option>
@@ -250,7 +250,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                        <form:hidden  class="form-control" value="{{type}}" path="at_type"></form:hidden>
+                                        <form:hidden  class="form-control" value="{{edittype}}" path="at_type"></form:hidden>
                                         </div>   
                                         </div>
                                         <div class="row" style="margin-left: 100px">
