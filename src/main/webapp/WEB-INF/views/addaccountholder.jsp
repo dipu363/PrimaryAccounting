@@ -240,21 +240,19 @@
                                             <div class="col-sm-3">
                                                 <h5 style="text-align: right">Account Type :</h5>
                                             </div>
-                                            <div class="form-group col-sm-6">
+                                        <div class="form-group col-sm-6">
+                                           
+                                            <select class="form-control" ng-model="type" required="true">
+                                                <option value="">--Select Gender --</option>
+                                                <option value="Customer"> Customer</option>
+                                                <option value="Supplier"> Supplier</option>
+                                                  <option value="Employer"> Employer</option>
+                                            </select>
+                                        </div>
 
-                                                <select class="form-control" ng-model="actype" required="true">
-                                                    <option value="">--Select Account Type --</option>
-                                                    <option value="Customer"> Customer</option>
-                                                    <option value="Supplier"> Supplier</option>
-                                                    <option value="Employer"> Employer</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group">
-
-                                            <form:hidden  class="form-control" value="{{type}}" path="at_type"></form:hidden>
-                                            </div>                  
-
+                                        <div class="form-group">
+                                        <form:hidden  class="form-control" value="{{type}}" path="at_type"></form:hidden>
+                                        </div>  
                                         </div>
                                         <div class="row" style="margin-left: 100px">
                                             <div class="col-sm-3">
