@@ -30,7 +30,7 @@ public class Accounttype implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int at_id;
     @Column
-    private int u_id;
+    private String u_id;
     @Column
     private int company_id;
     @Column
@@ -55,13 +55,15 @@ public class Accounttype implements Serializable {
         this.at_id = at_id;
     }
 
-    public int getU_id() {
+    public String getU_id() {
         return u_id;
     }
 
-    public void setU_id(int u_id) {
+    public void setU_id(String u_id) {
         this.u_id = u_id;
     }
+
+   
 
     public int getCompany_id() {
         return company_id;
