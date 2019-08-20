@@ -51,7 +51,7 @@ SessionFactory sessionfactory;
         Session s = sessionfactory.openSession();
         Transaction t = s.getTransaction();
         t.begin();
-         List<Accounttype> accountlist = s.createQuery("SELECT  status FROM primaryaccounting.accounttype where at_id=2;").list();
+        Accounttype actype = (Accounttype) s.get(Accounttype.class, id);
          
         s.delete(actype);
         t.commit();
