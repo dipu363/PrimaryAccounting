@@ -160,7 +160,7 @@
                     <!-- end panel heading -->
                     <div class="panel-body" >
                         <div class="formcontainer ">
-                            <c:if test="${check}">
+                            <c:if test="${!check}">
                                 <form:form name="acholderModel"
                                            modelAttribute="addaccountModelobject" action="accounttype"
                                            method="post">
@@ -220,7 +220,7 @@
                                         </div>
                                 </form:form>
                             </c:if>
-                            <c:if test="${!check}">
+                            <c:if test="${check}">
                                 <form:form name="acholderModel"
                                            modelAttribute="addaccountModelobject" action="accounttype"
                                            method="post">
@@ -236,11 +236,10 @@
                                         </div>
 
                                         <div class="row" style="margin-left: 100px">
-
-                                            <div class="col-sm-3">
-                                                <h5 style="text-align: right">Account Type :</h5>
-                                            </div>
-                                        <div class="form-group col-sm-6">
+                                           <div class="col-sm-3">
+                                            <h5 style="text-align: right">Account Type :</h5>
+                                        </div>
+                                         <div class="form-group col-sm-6">
                                            
                                             <select class="form-control" ng-model="type" required="true">
                                                 <option value="">--Select Gender --</option>
@@ -252,7 +251,7 @@
 
                                         <div class="form-group">
                                         <form:hidden  class="form-control" value="{{type}}" path="at_type"></form:hidden>
-                                        </div>  
+                                        </div>   
                                         </div>
                                         <div class="row" style="margin-left: 100px">
                                             <div class="col-sm-3">
