@@ -48,14 +48,7 @@ SessionFactory sessionfactory;
 
     @Override
     public String deleteAccounttype(int id) {
-        Session s = sessionfactory.openSession();
-        Transaction t = s.getTransaction();
-        t.begin();
-        Accounttype actype = (Accounttype) s.get(Accounttype.class, id);
-        actype.setStatus("Deleted");
-        s.update(actype);
-        t.commit();
-        s.close();
+       
 
         return null;
     }
