@@ -65,7 +65,7 @@ SessionFactory sessionfactory;
      Session s = sessionfactory.openSession();
         Transaction t = s.getTransaction();
         t.begin();
-        List<Accounttype> accountlist = s.createQuery("from Accounttype").list();
+        List<Accounttype> accountlist = s.createQuery("from Accounttype where status = Active").list();
         Gson g = new Gson();
         String accountlistgson = g.toJson(accountlist);
         t.commit();
