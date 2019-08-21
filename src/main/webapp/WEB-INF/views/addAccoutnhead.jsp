@@ -10,14 +10,13 @@
 <html lang="en">
 
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Account Head</title>
+        <title>Accounthead</title>
         <link href="resources/dashboard/img/logo.ico" rel="shortcut icon" />
         <!-- Bootstrap core CSS-->
         <link href="resources/dashboard/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,6 +30,21 @@
         <!-- Custom styles for this template-->
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
+
+
+        <script>
+            var typelist = ${acctypelist};
+
+
+
+            angular.module('myapp', []).controller('addheadctrl',
+                    function ($scope) {
+                        $scope.acctypelists = typelist;
+
+
+                        console.log($scope.acctypelists);
+                    });
+        </script>
 
     </head>
 
@@ -85,14 +99,17 @@
                         <span>Add</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
-                  <a class="dropdown-item" href="showAuthorpage">Add Author</a>
+                        <h6 class="dropdown-header">Settings:</h6>
+
+                        <a class="dropdown-item" href="showAuthorpage">Add Author</a>
                         <a class="dropdown-item" href="showuserauthorizationctrlpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Add Menu</a>
-                        <a class="dropdown-item" href="showaccountheadctrlpage">Account Head</a>
-                        <a class="dropdown-item" href="showaccountholderpage">Add Account Type</a>
+                        <a class="dropdown-item" href="addaccounthead">Account Head</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
                         <a class="dropdown-item" href="journalctrlpage"> General Journal</a>
-                         <a class="dropdown-item" href="paymentvoucherctrlpage"> Payment Voucher</a>
-                          <a class="dropdown-item" href="receivedvoucherctrlpage"> Received Voucher</a>
+                        <a class="dropdown-item" href="paymentvoucherctrlpage"> Payment Voucher</a>
+                        <a class="dropdown-item" href="receivedvoucherctrlpage"> Received Voucher</a>
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -122,38 +139,118 @@
                 <div class="container-fluid">
 
                     <!-- Breadcrumbs-->
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="admindeshboard">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active">Account Head</li>
-                    </ol>
+                    <div class="row">
+                        <div class="col-lg-10">
+
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="admindeshboard">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active">Account Head</li>
+                            </ol>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <a href="showaccounthead"><button id="editbuttons" type="submit" class="btn badge-success" style="font-size: 22px">Back</button></a>
+
+                        </div>
+
+
+                    </div>
+
                     <!-- end panel heading -->
-                    <div class="panel-body" >
+                    <div class="panel-body" ng-app="myapp" ng-controller="addheadctrl" >
                         <div class="formcontainer ">
+                            <c:if test="${check}">
+                                <form:form name="acholderModel"
+                                           modelAttribute="accoutnheadobject" action="inserthead"
+                                           method="post">
 
 
-                            <form>
+                                    <div class="row" style=" margin-top: 100px ; margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h5 style="text-align: right"> Head Name :</h5>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder=" Head Name" type="text" path="ac_name" required="true"></form:input>
+                                            </div>
 
-                           
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder=" Account Head Name" type="text" required="true"></input>
-                                </div>
-                                       <div class="form-group">
-                                    <input class="form-control" Placeholder=" Account parent" type="text" required="true"></input>
-                                </div>
-                                       <div class="form-group">
-                                    <input class="form-control" Placeholder=" Root" type="text" required="true"></input>
-                                </div>
-                                       <div class="form-group">
-                                    <input class="form-control" Placeholder=" Status" type="text" required="true"></input>
-                                </div>
-                         
+                                        </div>
+                                        <div class="row" style=" margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h5 style="text-align: right">Account parent :</h5>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="Account parent" type="text" path="ac_parent" required="true"></form:input>
+                                            </div>
 
+                                        </div>
+                                        <div class="row" style=" margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h5 style="text-align: right">Root :</h5>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="Root" type="text" path="root" required="true"></form:input>
+                                            </div>
 
-                                <button type="submit" class="btn btn-success" id="editbuttons" name="Add">Submit</button>
-                                <button type="reset" class="btn btn-danger" id="removebuttons">Reset Details</button>
-                            </form>
+                                        </div>
+
+                                        <div class="row" style="padding-top: 100px">
+                                            <div class="col-sm-8 "></div>
+                                        <form:button type="submit" class="btn btn-success" id="editbuttons" name="Add">Submit</form:button>
+                                        <form:button type="reset" class="btn btn-danger" style=" margin-left: 10px" id="removebuttons">Reset</form:button>
+                                        </div>
+                                </form:form>
+                            </c:if>
+                            <c:if test="${!check}">
+                                <form:form name="acholderModel"
+                                           modelAttribute="accoutnheadobject" action="inserthead"
+                                           method="post">
+
+                                    <div class="row" style="margin-top: 100px; margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h5 style="text-align: right">ID :</h5>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="ID" type="text" path="ac_id" readonly="true" required="true"></form:input>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row" style=" margin-top: 100p ; margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h5 style="text-align: right"> Head Name :</h5>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder=" Head Name" type="text" path="ac_name" required="true"></form:input>
+                                            </div>
+
+                                        </div>
+                                        <div class="row" style=" margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h5 style="text-align: right">Account parent :</h5>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="Account parent" type="text" path="ac_parent" required="true"></form:input>
+                                            </div>
+
+                                        </div>
+                                        <div class="row" style=" margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h5 style="text-align: right">Root :</h5>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="Root" type="text" path="root" required="true"></form:input>
+                                            </div>
+
+                                        </div>
+                                        <div class="row" style="padding-top: 100px">
+                                            <div class="col-sm-8 d-flex justify-content-lg-center "></div>
+                                        <form:button type="submit" class="btn btn-success" id="editbuttons" name="Edit">Edit</form:button>
+                                        <form:button type="reset" class="btn btn-danger"  style=" margin-left: 10px" id="removebuttons">Reset</form:button>
+                                        </div>
+                                </form:form>
+                            </c:if>
+
 
                         </div>
                     </div>
@@ -161,63 +258,13 @@
                     <br>
 
                     <!-- panel body end -->
-                    <!-- DataTables Example -->
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <i class="fas fa-table"></i>
-                           Account Head List</div>
-                          <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
 
-                                            <th> ID</th>
-                                            <th>Account Name</th>
-                                            <th>Amount parent</th>
-                                            <th>Root </th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-
-                                            <th> ID</th>
-                                            <th>Account Name</th>
-                                            <th>Amount parent</th>
-                                            <th>Root </th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-
-
-                                            <td>####</td>
-                                            <td>####</td>
-                                            <td>####</td>
-                                            <td>####</td>
-                                            <td>####</td>
-                                            <td><a href="#"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="#"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                    </div>
                 </div>
-                <!-- /.container-fluid -->
-
                 <!-- Sticky Footer -->
                 <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span> Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin</span>
+                            <span> Copyrights and copy 2019  | All Rights Reserved | Design by Giyas uddin</span>
                         </div>
                     </div>
                 </footer>
