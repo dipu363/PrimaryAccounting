@@ -85,11 +85,11 @@
                         <span>Adding</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown"> 
-                        <a class="dropdown-item" href="showAuthorpage">Add Author</a>
+                        <a class="dropdown-item" href="showAuthorpage">Author</a>
                         <a class="dropdown-item" href="showuserauthorizationctrlpage">Authorization permission</a>
-                        <a class="dropdown-item" href="showmenuctrlpage">Add Menu</a>
+                        <a class="dropdown-item" href="showmenuctrlpage">Menu</a>
                         <a class="dropdown-item" href="showaccountheadctrlpage">Account Head</a>
-                        <a class="dropdown-item" href="showaccountholderpage">Add Account Type</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
                         <a class="dropdown-item" href="journalctrlpage"> General Journal</a>
                          <a class="dropdown-item" href="paymentvoucherctrlpage"> Payment Voucher</a>
                           <a class="dropdown-item" href="receivedvoucherctrlpage"> Received Voucher</a>

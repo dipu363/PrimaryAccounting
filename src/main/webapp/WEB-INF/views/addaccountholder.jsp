@@ -230,7 +230,7 @@
                                             <h5 style="text-align: right">ID :</h5>
                                         </div>
                                         <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder="ID" type="text" path="at_id" required="true"></form:input>
+                                            <form:input class="form-control" Placeholder="ID" type="text" path="at_id" readonly="true" required="true"></form:input>
                                             </div>
 
                                         </div>
