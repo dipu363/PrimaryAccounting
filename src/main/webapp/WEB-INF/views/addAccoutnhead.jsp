@@ -180,7 +180,12 @@
                                                 <h5 style="text-align: right">Account parent :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder="Account parent" type="text" path="ac_parent" required="true"></form:input>
+                                                <select class="form-control" ng-model="accname" ng-options="x.ac_name for x in acctypelists" required="true">
+                                                    <option value="">-- Choose Parent--</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                            <form:hidden  class="form-control" value="{{accname}}" path="ac_parent"></form:hidden>
                                             </div>
 
                                         </div>
