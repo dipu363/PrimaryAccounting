@@ -21,6 +21,7 @@ public interface AccountHeadService {
     public String deleteAccounthead(int id);
 
     public String viewAccounthead();
+    public String viewroothead();
 
     public AccountChart viewoneAccounthead(int id);
 

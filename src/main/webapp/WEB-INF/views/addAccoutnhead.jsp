@@ -33,16 +33,15 @@
 
 
         <script>
-            var typelist = ${acctypelist};
-
-
+           
+            var frootheads = ${falseroothead};
 
             angular.module('myapp', []).controller('addheadctrl',
                     function ($scope) {
-                        $scope.acctypelists = typelist;
+                        $scope.falseroot = frootheads;
 
 
-                        console.log($scope.acctypelists);
+                        console.log($scope.falseroot);
                     });
         </script>
 
@@ -180,7 +179,7 @@
                                                 <h5 style="text-align: right">Account parent :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                                <select class="form-control" ng-model="accname" ng-options="x.ac_name for x in acctypelists" required="true">
+                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_name as x.ac_name for x in falseroot" required="true">
                                                     <option value="">-- Choose Parent--</option>
                                                 </select>
                                             </div>

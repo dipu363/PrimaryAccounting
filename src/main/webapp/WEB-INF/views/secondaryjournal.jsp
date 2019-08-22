@@ -89,7 +89,7 @@
                   <a class="dropdown-item" href="showAuthorpage">Add Author</a>
                         <a class="dropdown-item" href="showuserauthorizationctrlpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Add Menu</a>
-                        <a class="dropdown-item" href="showaccountheadctrlpage">Account Head</a>
+                        <a class="dropdown-item" href="showaccounthead">Account Head</a>
                         <a class="dropdown-item" href="showaccountholderpage">Add Account Type</a>
                         <a class="dropdown-item" href="journalctrlpage"> General Journal</a>
                          <a class="dropdown-item" href="paymentvoucherctrlpage"> Payment Voucher</a>

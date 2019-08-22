@@ -89,4 +89,19 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         return head;
     }
 
+    @Override
+    public String viewroothead() {
+          Session s = sessionfactory.openSession();
+        Transaction t = s.getTransaction();
+        t.begin();
+        //if show data like status then write this coad ; or seccond line
+          List<AccountChart> falserootheadlist = s.createQuery("from AccountChart where root = 'false'").list();
+        
+        Gson g = new Gson();
+        String accountlistgson = g.toJson(falserootheadlist);
+        t.commit();
+        s.close();
+        return accountlistgson;
+    }
+
 }

@@ -25,9 +25,11 @@ public class AccountchartCtrl {
     AccountHeadService head;
               @RequestMapping("/addaccounthead")
     public ModelAndView addaccountheadpage() {
-           String allheads = head.viewAccounthead();
+        String allfalseroot = head.viewroothead();
+          
         ModelAndView mv = new ModelAndView("addAccoutnhead", "accoutnheadobject",new AccountChart());
-         mv.addObject("headlists", allheads);
+      
+         mv.addObject("falseroothead", allfalseroot);
         mv.addObject("check", "true");
         return mv;
     }
