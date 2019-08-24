@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -48,5 +49,21 @@ public class AccountchartCtrl {
     public String Accounttype(@ModelAttribute("accoutnheadobject") AccountChart ah) {
         head.insertAccounthead(ah);
         return "redirect:/addaccounthead";
+    }
+           @RequestMapping(value = "/inserthead", params = "Edit")
+    public String editHead(@ModelAttribute("accoutnheadobject") AccountChart ah) {
+        head.updateAccounthead(ah);
+        return "redirect:/addaccounthead";
+    }
+    
+            @RequestMapping("/editbutton")
+    public ModelAndView passingonehead(@RequestParam("getid") int headid) {
+
+      AccountChart onehead = head.viewoneAccounthead(headid);
+         String allheads = head.viewAccounthead();
+        ModelAndView mv = new ModelAndView("addAccoutnhead", "accoutnheadobject", onehead);
+        mv.addObject("headlists", allheads);
+         mv.addObject("check", "false");
+        return mv;
     }
 }

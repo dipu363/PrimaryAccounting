@@ -192,7 +192,7 @@
                                             <td>{{head.ac_name}}</td>
                                             <td>{{head.ac_parent}}</td>
                                             <td>{{head.root}}</td>      
-                                            <td><a href="editingaccounttypebtn?getid={{type.at_id}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
+                                            <td><a href="editbutton?getid={{head.ac_id}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
                                             </td>
                                         </tr>
                                     </tbody>

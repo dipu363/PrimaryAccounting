@@ -33,12 +33,13 @@
 
 
         <script>
-           
-            var frootheads = ${falseroothead};
 
+            var frootheads = ${falseroothead};
+         
             angular.module('myapp', []).controller('addheadctrl',
                     function ($scope) {
                         $scope.falseroot = frootheads;
+                     
 
 
                         console.log($scope.falseroot);
@@ -47,7 +48,7 @@
 
     </head>
 
-    <body id="page-top">
+    <body id="page-top"  ng-app="myapp" ng-controller="addheadctrl">
 
         <nav class="navbar navbar-expand navbar-dark  static-top" style="background: #0c5460">
 
@@ -157,7 +158,7 @@
                     </div>
 
                     <!-- end panel heading -->
-                    <div class="panel-body" ng-app="myapp" ng-controller="addheadctrl" >
+                    <div class="panel-body" >
                         <div class="formcontainer ">
                             <c:if test="${check}">
                                 <form:form name="acholderModel"
@@ -170,7 +171,7 @@
                                             <h5 style="text-align: right"> Head Name :</h5>
                                         </div>
                                         <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder=" Head Name" type="text" path="ac_name" required="true"></form:input>
+                                            <form:input class="form-control" Placeholder="Head Name" type="text" path="ac_name" required="true"></form:input>
                                             </div>
 
                                         </div>
@@ -180,7 +181,7 @@
                                             </div>
                                             <div class="form-group col-sm-6" >
                                                 <select class="form-control" ng-model="accname" ng-options=" x.ac_name as x.ac_name for x in falseroot" required="true">
-                                                    <option value="">-- Choose Parent--</option>
+                                                    <option value="">--Choose Parent--</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -193,7 +194,14 @@
                                                 <h5 style="text-align: right">Root :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder="Root" type="text" path="root" required="true"></form:input>
+                                                <select class="form-control" ng-model="root" required="true">
+                                                    <option value="">--Choose Parent--</option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="Not">Not</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                            <form:hidden  class="form-control" value="{{root}}" path="root"></form:hidden>
                                             </div>
 
                                         </div>
@@ -220,12 +228,12 @@
 
                                         </div>
 
-                                        <div class="row" style=" margin-top: 100p ; margin-left: 100px">
+                                        <div class="row" style=" margin-left: 100px">
                                             <div class="col-sm-3">
                                                 <h5 style="text-align: right"> Head Name :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder=" Head Name" type="text" path="ac_name" required="true"></form:input>
+                                            <form:input class="form-control" Placeholder="Head Name" type="text" path="ac_name" required="true"></form:input>
                                             </div>
 
                                         </div>
@@ -234,7 +242,12 @@
                                                 <h5 style="text-align: right">Account parent :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder="Account parent" type="text" path="ac_parent" required="true"></form:input>
+                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_name as x.ac_name for x in falseroot" required="true">
+                                                    <option value="">--Choose Parent--</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                            <form:hidden  class="form-control" value="{{accname}}" path="ac_parent"></form:hidden>
                                             </div>
 
                                         </div>
@@ -243,7 +256,14 @@
                                                 <h5 style="text-align: right">Root :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder="Root" type="text" path="root" required="true"></form:input>
+                                                <select class="form-control" ng-model="root" required="true">
+                                                    <option value="">--Choose Parent--</option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="Not">Not</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                            <form:hidden  class="form-control" value="{{root}}" path="root"></form:hidden>
                                             </div>
 
                                         </div>
