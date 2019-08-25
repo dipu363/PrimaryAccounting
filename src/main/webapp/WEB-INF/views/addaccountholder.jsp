@@ -173,7 +173,7 @@
                                          <div class="form-group col-sm-6">
                                            
                                              <select class="form-control" ng-model="edittype" required="true">
-                                                <option value="">--Select Gender --</option>
+                                                <option value="">--Select Account Type --</option>
                                                 <option value="Customer"> Customer</option>
                                                 <option value="Supplier"> Supplier</option>
                                                   <option value="Employer"> Employer</option>

@@ -31,7 +31,18 @@
         <!-- Custom styles for this template-->
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
+        
+    <script>
+           var allmenu = ${menulists};
 
+            angular.module('myapp', []).controller('menuctrl',
+                    function ($scope) {
+                        $scope.allmenus = allmenu;
+
+
+                        console.log($scope.allmenus);
+                    });
+        </script>
     </head>
 
     <body id="page-top">
@@ -76,7 +87,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="admindeshboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Hello ${sessionScope.UserloggedIn} </span>
+                        <span>Hello ${sessionScope.UserLoggedIn} </span>
                     </a>
                 </li>
                 <li class="nav-item dropdown" >
@@ -90,7 +101,7 @@
                         <a class="dropdown-item" href="showuserauthorizationctrlpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Add Menu</a>
                         <a class="dropdown-item" href="showaccounthead">Account Head</a>
-                        <a class="dropdown-item" href="showaccountholderpage">Add Account Type</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
                         <a class="dropdown-item" href="journalctrlpage"> General Journal</a>
                          <a class="dropdown-item" href="paymentvoucherctrlpage"> Payment Voucher</a>
                           <a class="dropdown-item" href="receivedvoucherctrlpage"> Received Voucher</a>
@@ -122,32 +133,84 @@
 
                 <div class="container-fluid">
 
-                    <!-- Breadcrumbs-->
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="admindeshboard">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Menu</li>
+                        <li class="breadcrumb-item active">Author</li>
                     </ol>
                     <!-- end panel heading -->
                     <div class="panel-body" >
                         <div class="formcontainer ">
 
+                            <c:if test="${check}">
+                            <form:form name="menuobject"
+                                       modelAttribute="menuobject" action="addingmenu"
+                                       method="post">
+                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                    <div class="col-sm-3">
+                                        <h4 style="text-align: right">Menu Name :</h4>
+                                    </div>
+                                    <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="menu name" type="text" path="menuname" required="true"></form:input>
+                                    </div>
 
-                            <form>
-
-                                <div class="form-group">               
-                                    <input class="form-control" Placeholder="Menu Name" type="text" required="true"></input>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder=" ex:  /menuurl" type="text" required="true"></input>
+                                <div class="row" style="margin-left: 100px">
+                                    <div class="col-sm-3">
+                                        <h4 style="text-align: right">Menu Url :</h4>
+                                    </div>
+                                    <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="example:/menu url" type="text" path="url" required="true"></form:input>
+                                    </div>
+
                                 </div>
+                                <div class="row" style="padding-top: 100px">
+                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                 <form:button type="submit" class="btn btn-success" id="editbuttons" name="Add">Submit</form:button>
+                                    <form:button type="reset" class="btn btn-danger" id="removebuttons">Reset</form:button>
+                                </div>
+                            </form:form>
+                        </c:if>
+                            <c:if test="${!check}">
+                                        <form:form name="menuobject"
+                                       modelAttribute="menuobject" action="addingmenu"
+                                       method="post">
+                             <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                    <div class="col-sm-3">
+                                        <h4 style="text-align: right">ID :</h4>
+                                    </div>
+                                    <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="ID" type="text" path="menuid" ></form:input>
+                                    </div>
 
+                                </div>
+                                <div class="row" style=" margin-left: 100px">
+                                    <div class="col-sm-3">
+                                        <h4 style="text-align: right">Menu Name :</h4>
+                                    </div>
+                                    <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="menu name" type="text" path="menuname" required="true"></form:input>
+                                    </div>
 
-                                <button type="submit" class="btn btn-success" id="editbuttons" name="Add">Submit</button>
-                                <button type="reset" class="btn btn-danger" id="removebuttons">Reset Details</button>
-                            </form>
+                                </div>
+                                <div class="row" style="margin-left: 100px">
+                                    <div class="col-sm-3">
+                                        <h4 style="text-align: right">Menu Url :</h4>
+                                    </div>
+                                    <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="example:/menu url" type="text" path="url" required="true"></form:input>
+                                    </div>
 
+                                </div>
+                                <div class="row" style="padding-top: 100px">
+                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                   <form:button id="editbuttons" type="submit" class="btn btn-success " name="Edit">Edit </form:button>
+                                    <form:button id="removebuttons" type="reset" class="btn btn-danger ">Reset</form:button>
+                                </div>
+                            </form:form>
+                                
+                            </c:if>
                         </div>
                     </div>
 
@@ -155,42 +218,36 @@
 
                     <!-- panel body end -->
                     <!-- DataTables Example -->
-                    <div class="card mb-3">
+                    <div class="card mb-3" ng-app="myapp" ng-controller="menuctrl">
                         <div class="card-header">
                             <i class="fas fa-table"></i>
-                            Menu Item </div>
+                            Author List</div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-
                                             <th> ID</th>
                                             <th>Menu Name</th>
-                                            <th>Menu Url</th>
+                                            <th>Url</th>
                                             <th>Action</th>
-
-
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th> ID</th>
                                             <th>Menu Name</th>
-                                            <th>Menu Url</th>
+                                            <th>Url</th>
                                             <th>Action</th>
-
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-
-
-
-                                            <td>####</td>
-                                            <td>####</td>
-                                            <td>####</td>
-                                            <td><a href="#"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="#"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
+                                        <tr ng-repeat="m in allmenus">
+                                            <td>{{m.menuid}}</td>
+                                             <td>{{m.menuname}}</td>
+                                            <td>{{m.url}}</td>
+                                           
+                                           <td><a href="editmenu?getid={{m.menuid}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a href="removemenu/{{m.menuid}}"><button id="removebuttons" type="button" class="btn btn-danger ">Remove</button></a>
                                             </td>
                                         </tr>
                                     </tbody>

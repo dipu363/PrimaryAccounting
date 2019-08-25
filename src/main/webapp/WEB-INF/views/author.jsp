@@ -89,7 +89,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="admindeshboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Hello ${sessionScope.UserloggedIn} </span>
+                        <span>Hello ${sessionScope.UserLoggedIn} </span>
                     </a>
                 </li>
                 <li class="nav-item dropdown" >
@@ -163,7 +163,7 @@
                                         <h4 style="text-align: right">Author Type :</h4>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="author type" type="text" path="authr_type" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="author type" type="text" path="author_type" required="true"></form:input>
                                     </div>
 
                                 </div>
@@ -201,7 +201,7 @@
                                         <h4 style="text-align: right">Author Type :</h4>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="author type" type="text" path="authr_type" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="author type" type="text" path="author_type" required="true"></form:input>
                                     </div>
 
                                 </div>
@@ -232,6 +232,7 @@
                                             <th> ID</th>
                                             <th>Author Name</th>
                                             <th>Author Type</th>
+                                            <th>Author Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -240,6 +241,7 @@
                                             <th> ID</th>
                                             <th>Author Name</th>
                                             <th>Author Type</th>
+                                            <th>Author Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -247,7 +249,8 @@
                                         <tr ng-repeat="auth in authorlists">
                                             <td>{{auth.a_id}}</td>
                                              <td>{{auth.author_name}}</td>
-                                            <td>{{auth.authr_type}}</td>
+                                            <td>{{auth.author_type}}</td>
+                                            <td>{{auth.author_status}}</td>
                                            <td><a href="editauthorbutton?getid={{auth.a_id}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a href="removeauthor/{{auth.a_id}}"><button id="removebuttons" type="button" class="btn btn-danger ">Remove</button></a>
                                             </td>
                                         </tr>

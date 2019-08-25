@@ -24,7 +24,11 @@ public class Author implements Serializable {
     @Column
     private String author_name; 
     @Column
-    private String authr_type;
+    private String author_type;
+    @Column
+    private String author_status="True";
+
+
 
     public Author() {
     }
@@ -44,12 +48,20 @@ public class Author implements Serializable {
         this.author_name = author_name;
     }
 
-    public String getAuthr_type() {
-        return authr_type;
+    public String getAuthor_type() {
+        return author_type;
     }
 
-    public void setAuthr_type(String authr_type) {
-        this.authr_type = authr_type;
+    public void setAuthor_type(String author_type) {
+        this.author_type = author_type;
+    }
+
+    public String getAuthor_status() {
+        return author_status;
+    }
+
+    public void setAuthor_status(String author_status) {
+        this.author_status = author_status;
     }
     
 }

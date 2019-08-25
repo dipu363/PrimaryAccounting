@@ -57,7 +57,7 @@ SessionFactory sessionfactory;
         String authorlistgson = g.toJson(grouplist);
         t.commit();
         s.close();
-        //System.out.println(categorylistgson);
+       
         return authorlistgson;
     }
 
