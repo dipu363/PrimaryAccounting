@@ -6,11 +6,15 @@
 package com.dipu.primaryaccounting.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -23,61 +27,86 @@ public class MasteJournal implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int m_id;
     @Column
-    private int u_id;
-    @Column
-    private int c_id;
-    @Column
-    private int e_id;
-    @Column
-    private int s_id;
+    private String u_id;
     @Column
     private int company_id;
     @Column
     private String voucher_no;
+    @Temporal(TemporalType.DATE)
+    private Date paydate;
     @Column
     private String voucher_type;
     @Column
     private String narration;
+    @Transient
+    private int ac_id;
+    @Transient
+    private double debit;
+    @Transient
+    private double credit;
+    @Transient
+    private String sec_status;
+
+    public String getSec_status() {
+        return sec_status;
+    }
+
+    public void setSec_status(String sec_status) {
+        this.sec_status = sec_status;
+    }
+
+
+      public String getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(String u_id) {
+        this.u_id = u_id;
+    }
+
+    public Date getPaydate() {
+        return paydate;
+    }
+
+    public void setPaydate(Date paydate) {
+        this.paydate = paydate;
+    }
+
+    public double getDebit() {
+        return debit;
+    }
+
+    public void setDebit(double debit) {
+        this.debit = debit;
+    }
+
+    public double getCredit() {
+        return credit;
+    }
+
+    public void setCredit(double credit) {
+        this.credit = credit;
+    }
+
+  
 
     public int getM_id() {
         return m_id;
+    }
+
+    public int getAc_id() {
+        return ac_id;
+    }
+
+    public void setAc_id(int ac_id) {
+        this.ac_id = ac_id;
     }
 
     public void setM_id(int m_id) {
         this.m_id = m_id;
     }
 
-    public int getU_id() {
-        return u_id;
-    }
 
-    public void setU_id(int u_id) {
-        this.u_id = u_id;
-    }
-
-    public int getC_id() {
-        return c_id;
-    }
-
-    public void setC_id(int c_id) {
-        this.c_id = c_id;
-    }
-
-    public int getE_id() {
-        return e_id;
-    }
-
-    public void setE_id(int e_id) {
-        this.e_id = e_id;
-    }
-
-    public int getS_id() {
-        return s_id;
-    }
-
-    public void setS_id(int s_id) {
-        this.s_id = s_id;
-    }
 
     public int getCompany_id() {
         return company_id;

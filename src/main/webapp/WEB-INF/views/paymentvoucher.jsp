@@ -31,10 +31,22 @@
         <!-- Custom styles for this template-->
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
+     <script>
 
+            var frootheads = ${allaccheadlist};
+         
+            angular.module('myapp', []).controller('paymentctrl',
+                    function ($scope) {
+                        $scope.falseroot = frootheads;
+                     
+
+
+                        console.log($scope.falseroot);
+                    });
+        </script>
     </head>
 
-    <body id="page-top">
+    <body id="page-top" ng-app="myapp" ng-controller="paymentctrl">
 
         <nav class="navbar navbar-expand navbar-dark  static-top" style="background: #0c5460">
 
@@ -136,7 +148,7 @@
                         <div class="formcontainer ">
 
 
-                            <form>
+                            <form:form  modelAttribute="paymentvoucherobject" name="paymentvoucher" action="addingpaymentvoucher" method="Post" >
                                 <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
@@ -148,14 +160,14 @@
                                         <div class="row">
 
                                             <div class="col-sm-3">
-                                                <input class="form-control" type="text" required="true"/> 
+                                                <form:input class="form-control" Placeholder="Voucher no" type="number" path="voucher_no" required="true"></form:input>
                                             </div>
                                             <div class="col-sm-2" style="text-align: right"> 
                                                 <h4>Date:</h4>  
                                             </div>
                                             <div class="col-sm-3">
 
-                                                <input class="form-control" type="text" required="true"/>
+                                            <form:input class="form-control" placeholder="Date"  path="paydate" type="text"></form:input>
                                             </div>
 
                                         </div>
@@ -167,30 +179,26 @@
 
                                 </div>
                         
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right"> Root Head :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <select class="form-control"required="true">
-                                            <option value="">--Select Root Head --</option>
-                                            <option value="Account Recivable ">Account Receivable </option>
-                                            <option value="Account payable">Account payable</option>
-                                            <option value="Bank">Bank</option>
-                                            <option value="Office Equipment">Office Equipment</option>
-                                            <option value="Cash">Cash</option>
+                               <div class="row" style=" margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h5 style="text-align: right">Account Title :</h5>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in falseroot" required="true">
+                                                    <option value="">--Choose Account Title--</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                            <form:hidden  class="form-control" value="{{accname}}" path="ac_id"></form:hidden>
+                                            </div>
 
-
-                                        </select>
-                                    </div>
-
-                                </div>
+                                        </div>
                                 <div class="row" style="margin-left: 100px">
                                     <div class="col-sm-3">
                                         <h4 style="text-align: right">Amount :</h4>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <input class="form-control" Placeholder="0.00" type="text" required="true"></input>
+                                        <form:input class="form-control" Placeholder="0.00" path="debit" type="text" required="true"></form:input>
                                     </div>
 
                                 </div>
@@ -199,68 +207,22 @@
                                         <h4 style="text-align: right">Narration :</h4>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <input class="form-control" Placeholder="Narration" type="text" required="true"></input>
+                                    <form:input class="form-control" Placeholder="Narration" type="text" path="narration" required="true"></form:input>
                                     </div>
 
                                 </div>
                                 <div class="row" style="padding-top: 100px">
                                     <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                    <button type="submit" class="btn btn-success" id="editbuttons" name="Add">Add</button>
-                                    <button type="reset" class="btn btn-danger" id="removebuttons">Reset</button> 
+                                    <form:button type="submit" class="btn btn-success" id="editbuttons" name="Add">Add</form:button>
+                                    <form:button type="reset" class="btn btn-danger" id="removebuttons">Reset</form:button> 
                                 </div>
 
 
 
-                            </form>
+                            </form:form>
                         </div>
 
                     </div>
-                </div>
-
-                <br>
-
-                <!-- panel body end -->
-                <!-- DataTables Example -->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fas fa-table"></i>
-                        List</div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-<!--                                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                                <thead>
-                                                                    <tr>
-                            
-                                                                        <th> ID</th>
-                                                                        <th>Author Name</th>
-                                                                        <th>Author Type</th>
-                                                                        <th>Action</th>
-                            
-                            
-                                                                    </tr>
-                                                                </thead>
-                                                                <tfoot>
-                                                                    <tr>
-                            
-                                                                        <th> ID</th>
-                                                                        <th>Author Name</th>
-                                                                        <th>Author Type</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </tfoot>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>####</td>
-                                                                        <td>####</td>
-                                                                        <td>####</td>
-                                                                        <td><a href="#"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="#"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>-->
-                        </div>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div>
             </div>
             <!-- /.container-fluid -->

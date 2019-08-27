@@ -31,12 +31,38 @@ public class SecondaryJournal implements Serializable {
     @Column
     private int ac_id;
     @Column
-    private double amount;
+    private double debit;
     @Column
-    private String status;
+    private double credit;
+    @Column
+    private String sec_status;
+
+    public String getSec_status() {
+        return sec_status;
+    }
+
+    public void setSec_status(String sec_status) {
+        this.sec_status = sec_status;
+    }
 
     public int getSec_id() {
         return sec_id;
+    }
+
+    public double getDebit() {
+        return debit;
+    }
+
+    public void setDebit(double debit) {
+        this.debit = debit;
+    }
+
+    public double getCredit() {
+        return credit;
+    }
+
+    public void setCredit(double credit) {
+        this.credit = credit;
     }
 
     public void setSec_id(int sec_id) {
@@ -74,21 +100,6 @@ public class SecondaryJournal implements Serializable {
     public void setAc_id(int ac_id) {
         this.ac_id = ac_id;
     }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+ 
 
 }
