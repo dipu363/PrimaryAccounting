@@ -192,7 +192,7 @@
                                             <td>{{head.ac_name}}</td>
                                             <td>{{head.ac_parent}}</td>
                                             <td>{{head.root}}</td>      
-                                            <td><a href="editbutton?getid={{head.ac_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#71dd8a; width: 40px; height: 40px"></button></a>  <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
+                                            <td><a href="editbutton?getid={{head.ac_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a>  <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
                                     </tbody>

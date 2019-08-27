@@ -251,14 +251,14 @@
                                              <td>{{auth.author_name}}</td>
                                             <td>{{auth.author_type}}</td>
                                             <td>{{auth.author_status}}</td>
-                                           <td><a href="editauthorbutton?getid={{auth.a_id}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a href="removeauthor/{{auth.a_id}}"><button id="removebuttons" type="button" class="btn btn-danger ">Remove</button></a>
+                                           <td><a href="editauthorbutton?getid={{auth.a_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a> <a href="removeauthor/{{auth.a_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                        
                     </div>
                 </div>
                 <!-- /.container-fluid -->

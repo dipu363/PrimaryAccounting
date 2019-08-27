@@ -198,14 +198,14 @@
                                             <td>{{type.address}}</td>
                                             <td>{{type.phone}}</td>
                                             <td>{{type.status}}</td>
-                                            <td><a href="editingaccounttypebtn?getid={{type.at_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a>  <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button"class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
+                                            <td><a href="editingaccounttypebtn?getid={{type.at_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a> <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                       
                     </div>
                 </div>
                 <!-- /.container-fluid -->

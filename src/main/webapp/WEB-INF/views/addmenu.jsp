@@ -247,14 +247,14 @@
                                              <td>{{m.menuname}}</td>
                                             <td>{{m.url}}</td>
                                            
-                                           <td><a href="editmenu?getid={{m.menuid}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a href="removemenu/{{m.menuid}}"><button id="removebuttons" type="button" class="btn btn-danger ">Remove</button></a>
+                                           <td><a href="editmenu?getid={{m.menuid}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a> <a href="removemenu/{{m.menuid}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                       
                     </div>
                 </div>
                 <!-- /.container-fluid -->
