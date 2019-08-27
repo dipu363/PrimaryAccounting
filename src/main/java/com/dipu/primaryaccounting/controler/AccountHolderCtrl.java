@@ -22,49 +22,52 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AccountHolderCtrl {
 
-@Autowired
-AccountService aser;
+    @Autowired
+    AccountService aser;
 
     @RequestMapping("/showaccountholderpage")
     public ModelAndView showaccountpage() {
-String typelist = aser.viewAccounttype();
+        String typelist = aser.viewAccounttype();
         ModelAndView mv = new ModelAndView("showaccountholder", "showaccountModelobject", new Accounttype());
-mv.addObject("acctypelist", typelist);
+        mv.addObject("acctypelist", typelist);
         mv.addObject("check", true);
 
         return mv;
     }
-    
 
     @RequestMapping("/addaccountholderpage")
     public ModelAndView addaccountpage() {
-String typelist = aser.viewAccounttype();
+        String typelist = aser.viewAccounttype();
         ModelAndView mv = new ModelAndView("addaccountholder", "addaccountModelobject", new Accounttype());
-mv.addObject("acctypelist", typelist);
+        mv.addObject("acctypelist", typelist);
         mv.addObject("check", true);
 
         return mv;
     }
-        @RequestMapping(value = "/accounttype", params = "Add")
+
+    @RequestMapping(value = "/accounttype", params = "Add")
     public String Accounttype(@ModelAttribute("addaccountModelobject") Accounttype at) {
         aser.insertAccounttype(at);
         return "redirect:/addaccountholderpage";
     }
-    
-        
-       @RequestMapping(value = "/accounttype", params = "Edit")
+
+    @RequestMapping(value = "/accounttype", params = "Edit")
     public String editaccounttype(@ModelAttribute("addaccountModelobject") Accounttype at) {
         aser.updateAccounttype(at);
         return "redirect:/showaccountholderpage";
     }
-     @RequestMapping("/editingaccounttypebtn")
+
+    @RequestMapping("/editingaccounttypebtn")
     public ModelAndView passingoneaccount(@RequestParam("getid") int accountId) {
-      Accounttype oneacctype = aser.viewoneAccounttype(accountId);
-        ModelAndView mv = new ModelAndView("addaccountholder", "addaccountModelobject", oneacctype);
-         mv.addObject("check", "false");
+        Accounttype oneacountype = aser.viewoneAccounttype(accountId);
+        String typelist = aser.viewAccounttype();
+        ModelAndView mv = new ModelAndView("showaccountholder", "showaccountModelobject", oneacountype);
+        mv.addObject("acctypelist", typelist);
+        mv.addObject("check", true);
         return mv;
     }
-            @RequestMapping("removeaccount/{Id}")
+
+    @RequestMapping("removeaccount/{Id}")
     public String removesubject(@PathVariable("Id") int id) {
         aser.deleteAccounttype(id);
         return "redirect:/showaccountholderpage";

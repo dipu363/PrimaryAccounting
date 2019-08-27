@@ -192,33 +192,14 @@
                                             <td>{{head.ac_name}}</td>
                                             <td>{{head.ac_parent}}</td>
                                             <td>{{head.root}}</td>      
-                                            <td><a href="editbutton?getid={{head.ac_id}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
+                                            <td><a href="editbutton?getid={{head.ac_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#71dd8a; width: 40px; height: 40px"></button></a>  <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                     </div>
-                    
-                    
-                    <ul>
-           
-                <li class="nav-item dropdown" ng-repeat="heads in headlists">
-                    <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       
-                        {{heads.ac_name}}
-                    </a>
-           
-                </li>
-              
-
-            </ul>
-                    
-                    
-                    
-                    
                 </div>
                 <!-- /.container-fluid -->
 

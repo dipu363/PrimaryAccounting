@@ -198,7 +198,7 @@
                                             <td>{{type.address}}</td>
                                             <td>{{type.phone}}</td>
                                             <td>{{type.status}}</td>
-                                            <td><a href="editingaccounttypebtn?getid={{type.at_id}}"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
+                                            <td><a href="editingaccounttypebtn?getid={{type.at_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a>  <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button"class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
                                     </tbody>

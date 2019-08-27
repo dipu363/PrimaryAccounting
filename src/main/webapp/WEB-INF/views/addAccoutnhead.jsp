@@ -150,7 +150,7 @@
                             </ol>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a href="showaccounthead"><button id="editbuttons" type="submit" class="btn badge-success" style="font-size: 22px">Back</button></a>
+                            <a href="showaccounthead"><button id="editbuttons" type="submit" class="btn badge-success" style="font-weight: bold; font-size: 18px; height: 47px">Back</button></a>
 
                         </div>
 
@@ -171,7 +171,7 @@
                                             <h5 style="text-align: right"> Head Name :</h5>
                                         </div>
                                         <div class="form-group col-sm-6" >
-                                            <form:input class="form-control" Placeholder="Head Name" type="text" path="ac_name" required="true"></form:input>
+                                            <form:input class="form-control" Placeholder="Head Name" type="text" path="ac_name" required="false"></form:input>
                                             </div>
 
                                         </div>
@@ -180,7 +180,7 @@
                                                 <h5 style="text-align: right">Account parent :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_name as x.ac_name for x in falseroot" required="true">
+                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in falseroot" required="true">
                                                     <option value="">--Choose Parent--</option>
                                                 </select>
                                             </div>
@@ -242,7 +242,7 @@
                                                 <h5 style="text-align: right">Account parent :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_name as x.ac_name for x in falseroot" required="true">
+                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in falseroot" required="true">
                                                     <option value="">--Choose Parent--</option>
                                                 </select>
                                             </div>
