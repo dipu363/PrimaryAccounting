@@ -35,7 +35,7 @@ public class SecondaryJournal implements Serializable {
     @Column
     private double credit;
     @Column
-    private String sec_status;
+    private String sec_status = "True";
 
     public String getSec_status() {
         return sec_status;

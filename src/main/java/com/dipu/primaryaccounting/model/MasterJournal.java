@@ -21,7 +21,7 @@ import javax.persistence.Transient;
  * @author SKY IT
  */
 @Entity
-public class MasteJournal implements Serializable {
+public class MasterJournal implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

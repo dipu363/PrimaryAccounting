@@ -5,7 +5,7 @@
  */
 package com.dipu.primaryaccounting.controler;
 
-import com.dipu.primaryaccounting.model.MasteJournal;
+import com.dipu.primaryaccounting.model.MasterJournal;
 import com.dipu.primaryaccounting.model.SecondaryJournal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

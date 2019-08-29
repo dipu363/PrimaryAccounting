@@ -5,7 +5,7 @@
  */
 package com.dipu.primaryaccounting.dao;
 
-import com.dipu.primaryaccounting.model.MasteJournal;
+import com.dipu.primaryaccounting.model.MasterJournal;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface PaymentVoucherService {
-    public String insertpaymet(MasteJournal mj);
+    public String insertpaymet(MasterJournal mj);
 
-    public String updatepayment(MasteJournal mj);
+    public String updatepayment(MasterJournal mj);
 }

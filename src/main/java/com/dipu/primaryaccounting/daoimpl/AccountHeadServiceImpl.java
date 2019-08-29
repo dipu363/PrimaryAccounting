@@ -95,7 +95,7 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         Transaction t = s.getTransaction();
         t.begin();
         //if show data like status then write this coad ; or seccond line
-          List<AccountChart> falserootheadlist = s.createQuery("from AccountChart where root = 'Not'").list();
+          List<AccountChart> falserootheadlist = s.createQuery("from AccountChart where root = 'Yes'").list();
         
         Gson g = new Gson();
         String accountlistgson = g.toJson(falserootheadlist);

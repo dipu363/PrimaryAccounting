@@ -17,7 +17,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>payment voucher</title>
+        <title>Voucher</title>
         <link href="resources/dashboard/img/logo.ico" rel="shortcut icon" />
         <!-- Bootstrap core CSS-->
         <link href="resources/dashboard/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,13 +37,14 @@
          
             angular.module('myapp', []).controller('paymentctrl',
                     function ($scope) {
-                        $scope.falseroot = frootheads;
+                        $scope.Yesrootheads = frootheads;
                      
 
 
-                        console.log($scope.falseroot);
+                        console.log($scope.Yesrootheads);
                     });
         </script>
+
     </head>
 
     <body id="page-top" ng-app="myapp" ng-controller="paymentctrl">
@@ -69,9 +70,9 @@
                         <i class="fas fa-user-circle fa-fw"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="admindeshboard">Hello ${sessionScope.UserloggedIn}</a>
+                        <a class="dropdown-item" href="#">Hello ${sessionScope.UserLoggedIn}</a>
                         <a class="dropdown-item" href="<%=request.getContextPath()%>">Home</a>
-                        <a class="dropdown-item" href="admindeshboard">Admin Signup</a>
+                        <a class="dropdown-item" href="adminsignuppage">Admin Signup</a>
 
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
@@ -84,14 +85,16 @@
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <ul class="sidebar navbar-nav" style="background:  #0c5460">s
+            <ul class="sidebar navbar-nav" style="background:  #0c5460">
                 <li class="nav-item active">
                     <a class="nav-link" href="admindeshboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Hello ${sessionScope.UserloggedIn} </span>
+                        <span>Hello ${sessionScope.UserLoggedIn}</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown" >
+                
+                
+                     <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Add</span>
@@ -103,18 +106,18 @@
                         <a class="dropdown-item" href="showmenuctrlpage">Menu</a>
                         <a class="dropdown-item" href="showaccounthead">Account Head</a>
                         <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
-                        <a class="dropdown-item" href="journalctrlpage"> General Journal</a>   
+                           
                     </div>
                 </li>
-                    <li class="nav-item dropdown">
+              <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Payment Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                            <a class="dropdown-item" href="paymentvoucherctrlpage">Cash Payment</a>
-                                                <a class="dropdown-item" href="paymentvoucherctrlpage">Bank Payment</a>
+                                            <a class="dropdown-item" href="cashpayment">Cash Payment</a>
+                                                <a class="dropdown-item" href="chequepayment">Bank Payment</a>
                                         
 
                     </div>
@@ -132,6 +135,21 @@
 
                     </div>
                 </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Journal Book</span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                            <a class="dropdown-item" href="journalctrlpage">General Journal</a>
+                                                
+                                        
+
+                    </div>
+                </li>
+                
+                
 
             </ul>
 
@@ -140,22 +158,23 @@
                 <div class="container-fluid">
 
                     <!-- Breadcrumbs-->
-                    <div style="padding-bottom: 50px">
-                        <ol class="breadcrumb" >
-                            <li class="breadcrumb-item">
-                                <a href="admindeshboard">Dashboard</a>
-                            </li>
-                            <li class="breadcrumb-item active"> Payment Voucher</li>
-                        </ol>
-                    </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="showwelcomepage">Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active">Cash Payment</li>
+                    </ol>
                     <!-- end panel heading -->
-                    <div class="panel-body" style="padding-bottom: 50px">
+                    <div class="panel-body">
                         <div class="formcontainer ">
-
-
-                              <form:form commandName="paymentvoucherobject" action="addingpaymentvoucher"
+                                <form:form commandName="paymentvoucherobject" action="addingpaymentvoucher"
                                            enctype="multipart/form-data" >
-                                <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                       <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
                                         <h4>Voucher no :</h4>   
@@ -175,22 +194,16 @@
 
                                             <form:input class="form-control" placeholder="Date" path="paydate" type="text"></form:input>
                                             </div>
-
                                         </div>
-
-
                                     </div>
-
-
-
                                 </div>
-                        
-                               <div class="row" style=" margin-left: 100px">
+                                      
+                                              <div class="row" style=" margin-left: 100px">
                                             <div class="col-sm-3">
                                                 <h5 style="text-align: right">Account Title :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
-                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in falseroot" required="true">
+                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in Yesrootheads" required="true">
                                                     <option value="">--Choose Account Title--</option>
                                                 </select>
                                             </div>
@@ -217,103 +230,107 @@
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 100px">
+                    
+                                <c:if test="${check}">
+                                     <div class="row" style="padding-top: 100px">
                                     <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                    <form:button type="submit" class="btn btn-success" id="editbuttons" name="Add">Add</form:button>
-                                    <form:button type="reset" class="btn btn-danger" id="removebuttons">Reset</form:button> 
-                                </div>
-
-
-
-                            </form:form>
+                                <form:button id="editbuttons" type="submit" name="Add" class="btn btn-success">Add</form:button>
+                                <form:button id="removebuttons" type="reset" class="btn btn-danger">Reset</form:button>
+                                     </div>
+                            </c:if>
+                            <c:if test="${!check}">
+                                 <div class="row" style="padding-top: 100px">
+                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                <form:button id="editbuttons" type="submit" name="Edit" class="btn">Edit</form:button>
+                                <form:button id="removebuttons" type="reset" class="btn">Reset</form:button>
+                                 </div>
+                            </c:if>
+                                </form:form>
+                         
+                           
                         </div>
+                        
+                        
+                    </div>
 
+                </div>
+                <!-- /.container-fluid -->
+
+                <!-- Sticky Footer -->
+                <footer class="sticky-footer">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span> Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin</span>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- /.content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="logout">Logout</a>
                     </div>
                 </div>
             </div>
-            <!-- /.container-fluid -->
-
-            <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span> Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin</span>
-                    </div>
-                </div>
-            </footer>
-
         </div>
-        <!-- /.content-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        <!-- Bootstrap core JavaScript-->
+        <script src="resources/dashboard/jquery/jquery.min.js"></script>
+        <script src="resources/dashboard/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+        <!-- Core plugin JavaScript-->
+        <script src="resources/dashboard/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-<!--  date picker link and her cade controller  and jsp page include-->
-    
+        <!-- Page level plugin JavaScript-->
+        <script src="resources/dashboard/chart/Chartmin.js"></script>
+        <script src="resources/dashboard/datatables/jquerydataTables.js"></script>
+        <script src="resources/dashboard/datatables/dataTablesbootstrap4.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="resources/dashboard/jsnew/sb-adminmin.js"></script>
+
+        <!-- Demo scripts for this page-->
+        <script src="resources/dashboard/jsnew/demo/datatablesdemo.js"></script>
+        <script src="resources/dashboard/jsnew/demo/chartareademo.js"></script>
+
 
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
         <script>
-                                            $(document).ready(function () {
-                                                var date_input = $('input[name="paydate"]');
-                                                //our date input has the name "date"
-                                                var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-                                                date_input.datepicker({
-                                                    format: 'yyyy/mm/dd',
-                                                    container: container,
-                                                    todayHighlight: true,
-                                                    autoclose: true,
+                                                $(document).ready(function () {
+                                                    var date_input = $('input[name="paydate"]'); //our date input has the name "date"
+                                                    var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+                                                    date_input.datepicker({
+                                                        format: 'dd/mm/yyyy',
+                                                        container: container,
+                                                        todayHighlight: true,
+                                                        autoclose: true,
+                                                    })
                                                 })
-                                            })
         </script>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="resources/dashboard/jquery/jquery.min.js"></script>
-    <script src="resources/dashboard/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="resources/dashboard/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Page level plugin JavaScript-->
-    <script src="resources/dashboard/chart/Chartmin.js"></script>
-    <script src="resources/dashboard/datatables/jquerydataTables.js"></script>
-    <script src="resources/dashboard/datatables/dataTablesbootstrap4.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="resources/dashboard/jsnew/sb-adminmin.js"></script>
-
-    <!-- Demo scripts for this page-->
-    <script src="resources/dashboard/jsnew/demo/datatablesdemo.js"></script>
-    <script src="resources/dashboard/jsnew/demo/chartareademo.js"></script>
-
-</body>
+    </body>
 </html>
 
