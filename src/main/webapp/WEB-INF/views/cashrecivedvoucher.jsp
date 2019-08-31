@@ -32,16 +32,16 @@
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
      <script>
-
-            var frootheads = ${allaccheadlist};
+      
+var allrow = ${allrownum};
+            var frootheads = ${allcreditaccheadlist};
          
             angular.module('myapp', []).controller('paymentctrl',
                     function ($scope) {
                         $scope.Yesrootheads = frootheads;
-                     
-
-
-                        console.log($scope.Yesrootheads);
+                        $scope.allrows = allrow;
+                       
+             
                     });
         </script>
 
@@ -129,8 +129,8 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                            <a class="dropdown-item" href="receivedvoucherctrlpage">Cash Receive</a>
-                                                <a class="dropdown-item" href="receivedvoucherctrlpage">Bank Receive</a>
+                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
                                         
 
                     </div>
@@ -167,7 +167,7 @@
                     <!-- end panel heading -->
                     <div class="panel-body">
                         <div class="formcontainer ">
-                                <form:form commandName="paymentvoucherobject" action="addingpaymentvoucher"
+                                <form:form commandName="recivevoucherobject" action="addingrecivevoucher"
                                            enctype="multipart/form-data" >
                                     
                                     
@@ -177,7 +177,7 @@
                                        <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
-                                        <h4>Voucher no :</h4>   
+                                        <h4> Type Voucher no :</h4>   
 
                                     </div>
 
@@ -185,7 +185,7 @@
                                         <div class="row">
 
                                             <div class="col-sm-3">
-                                                <form:input class="form-control" Placeholder="Voucher no" type="number" path="voucher_no" required="true"></form:input>
+                                                <form:input class="form-control"  placeholder="Last voucher no {{allrows}}"  path="voucher_no" ></form:input>
                                             </div>
                                             <div class="col-sm-2" style="text-align: right"> 
                                                 <h4>Date:</h4>  
@@ -217,7 +217,7 @@
                                         <h4 style="text-align: right">Amount :</h4>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="0.00" path="debit" type="text" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="0.00" path="credit" type="text" required="true"></form:input>
                                     </div>
 
                                 </div>

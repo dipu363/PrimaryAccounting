@@ -92,7 +92,7 @@
                         <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
                         <a class="dropdown-item" href="journalctrlpage"> General Journal</a>
                          <a class="dropdown-item" href="cashpayment"> Payment Voucher</a>
-                          <a class="dropdown-item" href="receivedvoucherctrlpage"> Received Voucher</a>
+                          <a class="dropdown-item" href="cashrecived"> Received Voucher</a>
                       
 
                     </div>

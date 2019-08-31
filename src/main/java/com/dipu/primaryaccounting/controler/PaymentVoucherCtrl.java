@@ -38,7 +38,7 @@ public class PaymentVoucherCtrl {
      @InitBinder
     public void myInitBinder(WebDataBinder binder) {
         //binder.setDisallowedFields(new String[]{"empMobile"});
-        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         binder.registerCustomEditor(Date.class, "paydate", new CustomDateEditor(format, false));
 //        binder.registerCustomEditor(String.class, "ename", new EmployeeNameEditor());
     }

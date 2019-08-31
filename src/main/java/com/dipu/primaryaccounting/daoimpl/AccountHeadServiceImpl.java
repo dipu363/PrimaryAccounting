@@ -7,7 +7,7 @@ package com.dipu.primaryaccounting.daoimpl;
 
 import com.dipu.primaryaccounting.dao.AccountHeadService;
 import com.dipu.primaryaccounting.model.AccountChart;
-import com.dipu.primaryaccounting.model.Accounttype;
+
 import com.google.gson.Gson;
 import java.util.List;
 import org.hibernate.Session;
@@ -103,5 +103,7 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         s.close();
         return accountlistgson;
     }
+    
+
 
 }
