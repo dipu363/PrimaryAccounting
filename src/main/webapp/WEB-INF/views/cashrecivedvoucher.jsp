@@ -113,7 +113,7 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                             <a class="dropdown-item" href="showaccountholderpage">Add Account</a>
+                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
                                                 <a class="dropdown-item" href="showaccountholderpage">Account List</a>
                                         
 
@@ -126,7 +126,7 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                             <a class="dropdown-item" href="showaccounthead"> Add Account Head</a>
+                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
                                                  <a class="dropdown-item" href="showaccounthead">Account Head List</a>
                                         
 
@@ -190,7 +190,7 @@
                     <!-- end panel heading -->
                     <div class="panel-body">
                         <div class="formcontainer ">
-                                <form:form commandName="recivevoucherobject" action="addingrecivevoucher"
+                            <form:form commandName="recivevoucherobject" action="addingrecivevoucher"
                                            enctype="multipart/form-data" >
                                     
                                     
@@ -268,7 +268,7 @@
                                 <form:button id="removebuttons" type="reset" class="btn">Reset</form:button>
                                  </div>
                             </c:if>
-                                </form:form>
+                            </form:form>>
                          
                            
                         </div>

@@ -32,13 +32,13 @@
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
      <script>
-
+var totalrowno= ${totalrows};
             var frootheads = ${allaccheadlist};
-         var allrows = ${allrownum};
+       
             angular.module('myapp', []).controller('paymentctrl',
                     function ($scope) {
                         $scope.Yesrootheads = frootheads;
-                     $scope.rowcounts = allrows;
+                    $scope.totalcount = totalrowno;
 
 
                         console.log($scope.Yesrootheads);
@@ -113,7 +113,7 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                             <a class="dropdown-item" href="showaccountholderpage">Add Account</a>
+                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
                                                 <a class="dropdown-item" href="showaccountholderpage">Account List</a>
                                         
 
@@ -126,7 +126,7 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                             <a class="dropdown-item" href="showaccounthead"> Add Account Head</a>
+                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
                                                  <a class="dropdown-item" href="showaccounthead">Account Head List</a>
                                         
 
@@ -190,13 +190,9 @@
                     <!-- end panel heading -->
                     <div class="panel-body">
                         <div class="formcontainer ">
-                                <form:form commandName="paymentvoucherobject" action="addingpaymentvoucher"
+                            <form:form commandName="paymentvoucherobject" action="addingpaymentvoucher"
                                            enctype="multipart/form-data" >
-                                    
-                                    
-                                    
-                                    
-                                    
+
                                        <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
@@ -208,7 +204,7 @@
                                         <div class="row">
 
                                             <div class="col-sm-3">
-                                                <form:input class="form-control" Placeholder="Last Voucher No {{rowcounts}}"  path="voucher_no" required="true"></form:input>
+                                                <form:input class="form-control" Placeholder="Last Voucher No {{totalcount}}"  path="voucher_no" required="true"></form:input>
                                             </div>
                                             <div class="col-sm-2" style="text-align: right"> 
                                                 <h4>Date:</h4>  

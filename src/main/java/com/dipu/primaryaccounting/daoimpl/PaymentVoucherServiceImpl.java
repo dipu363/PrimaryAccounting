@@ -50,7 +50,7 @@ SessionFactory sf;
     }
 
     @Override
-    public String allrowcount() {
+    public String rowcount() {
                         Session s = sf.openSession();
         Transaction t = s.getTransaction();
         t.begin();  

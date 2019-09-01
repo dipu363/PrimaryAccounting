@@ -112,7 +112,7 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                             <a class="dropdown-item" href="showaccountholderpage">Add Account</a>
+                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
                                                 <a class="dropdown-item" href="showaccountholderpage">Account List</a>
                                         
 
@@ -125,7 +125,7 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                             <a class="dropdown-item" href="showaccounthead"> Add Account Head</a>
+                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
                                                  <a class="dropdown-item" href="showaccounthead">Account Head List</a>
                                         
 

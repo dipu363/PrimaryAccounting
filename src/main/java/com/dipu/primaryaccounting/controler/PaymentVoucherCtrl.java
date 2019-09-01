@@ -46,10 +46,10 @@ public class PaymentVoucherCtrl {
     @RequestMapping("/cashpayment")
     public ModelAndView showsubjectpage() {
         String allacchead = acchead.viewroothead();
-        String allrow= payservice.allrowcount();
+        String allrows= payservice.rowcount();
         ModelAndView mv = new ModelAndView("cashpayment", "paymentvoucherobject", new MasterJournal());
         mv.addObject("allaccheadlist", allacchead);
-        mv.addObject("allrownum", allrow);
+        mv.addObject("totalrows", allrows);
         mv.addObject("check",true);
 
         return mv;
