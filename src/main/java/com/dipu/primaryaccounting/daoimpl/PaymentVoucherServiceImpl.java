@@ -8,6 +8,8 @@ package com.dipu.primaryaccounting.daoimpl;
 import com.dipu.primaryaccounting.dao.PaymentVoucherService;
 import com.dipu.primaryaccounting.model.MasterJournal;
 import com.dipu.primaryaccounting.model.SecondaryJournal;
+import com.google.gson.Gson;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -45,5 +47,22 @@ SessionFactory sf;
     public String updatepayment(MasterJournal mj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String allrowcount() {
+                        Session s = sf.openSession();
+        Transaction t = s.getTransaction();
+        t.begin();  
+        
+      
+          List<MasterJournal> allrows = s.createQuery("select count(m_id) from MasterJournal").list();
+        String rows = String .valueOf(allrows.get(0));
+        Gson g = new Gson();
+        String accountlistgson = g.toJson(rows);
+        t.commit();
+        s.close();
+        return accountlistgson;
+    }
+
     
 }

@@ -40,9 +40,9 @@ public class LoginController {
         String role = "ROLE_ADMIN";
         for (GrantedAuthority authority : authorities) {
             if (authority.getAuthority().equals(role)) {
-//                session.setAttribute("UserLoggedIn", us.getUsername());
-//                session.setAttribute("phone", us.getPhone());          
-//                session.setAttribute("UserId", userid);
+                session.setAttribute("UserLoggedIn", us.getUsername());
+                session.setAttribute("phone", us.getPhone());          
+                session.setAttribute("UserId", userid);
                 page= "redirect:/admindeshboard";
             }
             else{

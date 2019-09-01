@@ -34,11 +34,11 @@
      <script>
 
             var frootheads = ${allaccheadlist};
-         
+         var allrows = ${allrownum};
             angular.module('myapp', []).controller('paymentctrl',
                     function ($scope) {
                         $scope.Yesrootheads = frootheads;
-                     
+                     $scope.rowcounts = allrows;
 
 
                         console.log($scope.Yesrootheads);
@@ -85,7 +85,7 @@
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <ul class="sidebar navbar-nav" style="background:  #0c5460">
+           <ul class="sidebar navbar-nav" style="background:  #0c5460">
                 <li class="nav-item active">
                     <a class="nav-link" href="admindeshboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -97,16 +97,39 @@
                      <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
-                        <span>Add</span>
+                        <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
-                        <h6 class="dropdown-header">Settings:</h6>
+
                       <a class="dropdown-item" href="showAuthorpage">Author</a>
-                        <a class="dropdown-item" href="showuserauthorizationctrlpage">Authorization permission</a>
-                        <a class="dropdown-item" href="showmenuctrlpage">Menu</a>
-                        <a class="dropdown-item" href="showaccounthead">Account Head</a>
-                        <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
-                           
+                        <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
+                        <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Account </span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                             <a class="dropdown-item" href="showaccountholderpage">Add Account</a>
+                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+                                        
+
+                    </div>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Account Heads</span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                             <a class="dropdown-item" href="showaccounthead"> Add Account Head</a>
+                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+                                        
+
                     </div>
                 </li>
               <li class="nav-item dropdown">
@@ -129,8 +152,8 @@
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
                         
-                                            <a class="dropdown-item" href="receivedvoucherctrlpage">Cash Receive</a>
-                                                <a class="dropdown-item" href="receivedvoucherctrlpage">Bank Receive</a>
+                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
                                         
 
                     </div>
@@ -185,7 +208,7 @@
                                         <div class="row">
 
                                             <div class="col-sm-3">
-                                                <form:input class="form-control" Placeholder="Voucher no" type="number" path="voucher_no" required="true"></form:input>
+                                                <form:input class="form-control" Placeholder="Last Voucher No {{rowcounts}}"  path="voucher_no" required="true"></form:input>
                                             </div>
                                             <div class="col-sm-2" style="text-align: right"> 
                                                 <h4>Date:</h4>  

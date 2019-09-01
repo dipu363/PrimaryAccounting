@@ -86,51 +86,94 @@
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <ul class="sidebar navbar-nav" style="background:  #0c5460">s
+             <ul class="sidebar navbar-nav" style="background:  #0c5460">
                 <li class="nav-item active">
                     <a class="nav-link" href="admindeshboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Hello ${sessionScope.UserloggedIn} </span>
+                        <span>Hello ${sessionScope.UserLoggedIn}</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown" >
+                
+                
+                     <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
-                        <span>Add</span>
+                        <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
-                        <h6 class="dropdown-header">Settings:</h6>
 
-                        <a class="dropdown-item" href="showAuthorpage">Add Author</a>
-                        <a class="dropdown-item" href="showuserauthorizationctrlpage">Authorization permission</a>
-                        <a class="dropdown-item" href="showmenuctrlpage">Add Menu</a>
-                        <a class="dropdown-item" href="showaccounthead">Account Head</a>
-                        <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
-                        <a class="dropdown-item" href="journalctrlpage"> General Journal</a>
-                        <a class="dropdown-item" href="paymentvoucherctrlpage"> Payment Voucher</a>
-                        <a class="dropdown-item" href="receivedvoucherctrlpage"> Received Voucher</a>
+                      <a class="dropdown-item" href="showAuthorpage">Author</a>
+                        <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
+                        <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Account </span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                             <a class="dropdown-item" href="showaccountholderpage">Add Account</a>
+                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+                                        
+
+                    </div>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Account Heads</span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                             <a class="dropdown-item" href="showaccounthead"> Add Account Head</a>
+                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+                                        
+
+                    </div>
+                </li>
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Payment Voucher </span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                            <a class="dropdown-item" href="cashpayment">Cash Payment</a>
+                                                <a class="dropdown-item" href="chequepayment">Bank Payment</a>
+                                        
 
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
-                        <span>Show</span>
+                        <span>Received Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        <h6 class="dropdown-header">Settings:</h6>
-                        <!--                        <a class="dropdown-item" href="searchattendancsheet">Attendance</a>
-                                                <a class="dropdown-item" href="marksheetreportpage"> Result</a>
-                                                <a class="dropdown-item" href="userlistinfo">User List</a>
-                                                <a class="dropdown-item" href="viewstudent">View one Studentinfo</a>
-                                                <a class="dropdown-item" href="noticeboardpage">View Notice Board</a>
-                                                <a class="dropdown-item" href="classroutinreportpage">Search class Routine</a>
-                                                <a class="dropdown-item" href="paymentreportpage">Search Monthly Payment</a>
-                                                <a class="dropdown-item" href="reportView">search Exam</a>
-                                                <a class="dropdown-item" href="studentlistreportpage">search Student</a>-->
+                        
+                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
+                                        
 
                     </div>
                 </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Journal Book</span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                            <a class="dropdown-item" href="journalctrlpage">General Journal</a>
+                                                
+                                        
+
+                    </div>
+                </li>
+                
+                
 
             </ul>
 

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class UserAuthorizationCtrl {
-                    @RequestMapping("/showuserauthorizationctrlpage")
+                    @RequestMapping("/userauthorizationpage")
     public ModelAndView showsubjectpage() {
         ModelAndView mv = new ModelAndView("userauthorization", "authorizationModelobject",new UserAuthorization());
         return mv;

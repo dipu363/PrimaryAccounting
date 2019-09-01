@@ -33,7 +33,7 @@
         <script src="resources/dashboard/js/angular.js"></script>
      <script>
       
-var allrow = ${allrownum};
+            var allrow = ${allrownum};
             var frootheads = ${allcreditaccheadlist};
          
             angular.module('myapp', []).controller('paymentctrl',
@@ -97,16 +97,39 @@ var allrow = ${allrownum};
                      <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
-                        <span>Add</span>
+                        <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
-                        <h6 class="dropdown-header">Settings:</h6>
+
                       <a class="dropdown-item" href="showAuthorpage">Author</a>
-                        <a class="dropdown-item" href="showuserauthorizationctrlpage">Authorization permission</a>
-                        <a class="dropdown-item" href="showmenuctrlpage">Menu</a>
-                        <a class="dropdown-item" href="showaccounthead">Account Head</a>
-                        <a class="dropdown-item" href="showaccountholderpage">Account Type</a>
-                           
+                        <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
+                        <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Account </span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                             <a class="dropdown-item" href="showaccountholderpage">Add Account</a>
+                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+                                        
+
+                    </div>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Account Heads</span>
+                    </a>
+                    <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
+                        
+                                             <a class="dropdown-item" href="showaccounthead"> Add Account Head</a>
+                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+                                        
+
                     </div>
                 </li>
               <li class="nav-item dropdown">
@@ -162,7 +185,7 @@ var allrow = ${allrownum};
                         <li class="breadcrumb-item">
                             <a href="showwelcomepage">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Cash Payment</li>
+                        <li class="breadcrumb-item active">Cash Received</li>
                     </ol>
                     <!-- end panel heading -->
                     <div class="panel-body">
@@ -260,7 +283,7 @@ var allrow = ${allrownum};
                 <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span> Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin</span>
+                            <span> Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin| Contact: +880 1933932636</span>
                         </div>
                     </div>
                 </footer>
