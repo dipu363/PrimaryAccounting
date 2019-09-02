@@ -68,7 +68,7 @@
                         <i class="fas fa-user-circle fa-fw"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="admindeshboard">Hello ${sessionScope.UserloggedIn}</a>
+                        <a class="dropdown-item" href="admindeshboard">Hello ${sessionScope.UserLoggedIn}</a>
                         <a class="dropdown-item" href="<%=request.getContextPath()%>">Home</a>
                         <a class="dropdown-item" href="admindeshboard">Admin Signup</a>
 

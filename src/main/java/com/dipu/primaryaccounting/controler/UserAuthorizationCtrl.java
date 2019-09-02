@@ -20,6 +20,7 @@ public class UserAuthorizationCtrl {
                     @RequestMapping("/userauthorizationpage")
     public ModelAndView showsubjectpage() {
         ModelAndView mv = new ModelAndView("userauthorization", "authorizationModelobject",new UserAuthorization());
+        mv.addObject("check", true);
         return mv;
     }
     

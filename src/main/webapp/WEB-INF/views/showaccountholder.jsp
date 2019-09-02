@@ -33,17 +33,17 @@
 
 
         <script>
-                var typelist = ${acctypelist};
+            var typelist = ${acctypelist};
 
 
 
-                angular.module('myapp', []).controller('typecontrl',
-                        function ($scope) {
-                            $scope.acctypelists = typelist;
+            angular.module('myapp', []).controller('typecontrl',
+                    function ($scope) {
+                        $scope.acctypelists = typelist;
 
 
-                            console.log($scope.acctypelists);
-                        });
+                        console.log($scope.acctypelists);
+                    });
         </script>
 
     </head>
@@ -93,16 +93,16 @@
                         <span>Hello ${sessionScope.UserLoggedIn}</span>
                     </a>
                 </li>
-                
-                
-                     <li class="nav-item dropdown" >
+
+
+                <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
 
-                      <a class="dropdown-item" href="showAuthorpage">Author</a>
+                        <a class="dropdown-item" href="showAuthorpage">Author</a>
                         <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
                     </div>
@@ -113,36 +113,36 @@
                         <span>Account </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
-                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+
 
                     </div>
                 </li>
-                  <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Account Heads</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
-                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
+                        <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+
 
                     </div>
                 </li>
-              <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Payment Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashpayment">Cash Payment</a>
-                                                <a class="dropdown-item" href="chequepayment">Bank Payment</a>
-                                        
+
+                        <a class="dropdown-item" href="cashpayment">Cash Payment</a>
+                        <a class="dropdown-item" href="chequepayment">Bank Payment</a>
+
 
                     </div>
                 </li>
@@ -152,28 +152,28 @@
                         <span>Received Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
-                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
-                                        
+
+                        <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                        <a class="dropdown-item" href="cashrecived">Bank Receive</a>
+
 
                     </div>
                 </li>
-                    <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Journal Book</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="journalctrlpage">General Journal</a>
-                                                
-                                        
+
+                        <a class="dropdown-item" href="journalctrlpage">General Journal</a>
+
+
 
                     </div>
                 </li>
-                
-                
+
+
 
             </ul>
 
@@ -184,22 +184,22 @@
                     <!-- Breadcrumbs-->
                     <div class="row">
                         <div class="col-lg-10">
-                            
-                                <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="admindeshboard">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active">Account Type</li>
-                    </ol>
+
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="admindeshboard">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active">Account Type</li>
+                            </ol>
                         </div>
                         <div class="d-flex justify-content-end">
                             <a href="addaccountholderpage"><button id="editbuttons" type="submit" class="btn badge-success" style="font-weight: bold; font-size: 22px">+</button></a>
-                            
+
                         </div>
-                 
-                
+
+
                     </div>
-                   
+
                     <!-- DataTables Example -->
                     <div class="card mb-3 " >
                         <div class="card-header">
@@ -248,7 +248,7 @@
                                 </table>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
                 <!-- /.container-fluid -->

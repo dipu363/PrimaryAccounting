@@ -17,7 +17,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>journal</title>
+        <title>Voucher</title>
         <link href="resources/dashboard/img/logo.ico" rel="shortcut icon" />
         <!-- Bootstrap core CSS-->
         <link href="resources/dashboard/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,10 +31,23 @@
         <!-- Custom styles for this template-->
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
+        <script>
+
+         var num = ${rendint};
+         var frootheads = ${allaccheadlist};
+
+            angular.module('myapp', []).controller('paymentctrl',
+                    function ($scope) {
+                        $scope.Yesrootheads = frootheads;
+                        $scope.randvalue = num;
+
+
+                    });
+        </script>
 
     </head>
 
-    <body id="page-top">
+    <body id="page-top" ng-app="myapp" ng-controller="paymentctrl">
 
         <nav class="navbar navbar-expand navbar-dark  static-top" style="background: #0c5460">
 
@@ -57,9 +70,9 @@
                         <i class="fas fa-user-circle fa-fw"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="admindeshboard">Hello ${sessionScope.UserloggedIn}</a>
+                        <a class="dropdown-item" href="#">Hello ${sessionScope.UserLoggedIn}</a>
                         <a class="dropdown-item" href="<%=request.getContextPath()%>">Home</a>
-                        <a class="dropdown-item" href="admindeshboard">Admin Signup</a>
+                        <a class="dropdown-item" href="adminsignuppage">Admin Signup</a>
 
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
@@ -79,16 +92,16 @@
                         <span>Hello ${sessionScope.UserLoggedIn}</span>
                     </a>
                 </li>
-                
-                
-                     <li class="nav-item dropdown" >
+
+
+                <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
 
-                      <a class="dropdown-item" href="showAuthorpage">Author</a>
+                        <a class="dropdown-item" href="showAuthorpage">Author</a>
                         <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
                     </div>
@@ -99,36 +112,36 @@
                         <span>Account </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
-                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+
 
                     </div>
                 </li>
-                  <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Account Heads</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
-                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
+                        <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+
 
                     </div>
                 </li>
-              <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Payment Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashpayment">Cash Payment</a>
-                                                <a class="dropdown-item" href="chequepayment">Bank Payment</a>
-                                        
+
+                        <a class="dropdown-item" href="cashpayment">Cash Payment</a>
+                        <a class="dropdown-item" href="chequepayment">Bank Payment</a>
+
 
                     </div>
                 </li>
@@ -138,28 +151,28 @@
                         <span>Received Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
-                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
-                                        
+
+                        <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                        <a class="dropdown-item" href="cashrecived">Bank Receive</a>
+
 
                     </div>
                 </li>
-                    <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Journal Book</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="journalctrlpage">General Journal</a>
-                                                
-                                        
+
+                        <a class="dropdown-item" href="journalctrlpage">General Journal</a>
+
+
 
                     </div>
                 </li>
-                
-                
+
+
 
             </ul>
 
@@ -168,24 +181,26 @@
                 <div class="container-fluid">
 
                     <!-- Breadcrumbs-->
-                    <div style="padding-bottom: 50px">
-                        <ol class="breadcrumb" >
-                            <li class="breadcrumb-item">
-                                <a href="admindeshboard">Dashboard</a>
-                            </li>
-                            <li class="breadcrumb-item active">Voucher</li>
-                        </ol>
-                    </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="showwelcomepage">Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active">Journal</li>
+                    </ol>
                     <!-- end panel heading -->
-                    <div class="panel-body" style="padding-bottom: 50px">
+                    <div class="panel-body">
                         <div class="formcontainer ">
+                            <form:form commandName="generaljournalModelobject" action="addingpaymentvoucher"
+                                       enctype="multipart/form-data" >
 
 
-                            <form>
-                                <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
+
+
+
+                                <div class="row" style="padding-top:100px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
-                                        <h4>Voucher no :</h4>   
+                                        <h4> Type Voucher no :</h4>   
 
                                     </div>
 
@@ -193,197 +208,152 @@
                                         <div class="row">
 
                                             <div class="col-sm-3">
-                                                <input class="form-control" type="text" required="true"/> 
-                                            </div>
-                                            <div class="col-sm-2" style="text-align: right"> 
-                                                <h4>Date:</h4>  
-                                            </div>
-                                            <div class="col-sm-3">
+                                                <form:input class="form-control"  value="{{randvalue}}"  path="voucher_no" readonly="true"></form:input>
+                                                </div>
+                                                <div class="col-sm-2" style="text-align: right"> 
+                                                    <h4>Date:</h4>  
+                                                </div>
+                                                <div class="col-sm-3">
 
-                                                <input class="form-control" type="text" required="true"/>
+                                                <form:input class="form-control" placeholder="Date" path="tancsectiondate" type="text"></form:input>
+                                                </div>
                                             </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="row" style="padding-top:100px ; margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h5 style="text-align: right">Account Title :</h5>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                            <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in Yesrootheads" required="true">
+                                                <option value="">--Choose Account Title--</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                        <form:hidden  class="form-control" value="{{accname}}" path="ac_id"></form:hidden>
                                         </div>
 
+                                    </div>
+                                    <div class="row" style="margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h4 style="text-align: right">Amount :</h4>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="0.00" path="credit" type="text" required="true"></form:input>
+                                        </div>
+
+                                    </div>
+                                    <div class="row" style="margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h4 style="text-align: right">Narration :</h4>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="Narration" type="text" path="narration" required="true"></form:input>
+                                        </div>
 
                                     </div>
 
+                                        <c:if test="${check}">
+                                            <div class="row" style="padding-top: 100px">
+                                                <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                                <form:button id="editbuttons" type="submit" name="Add" class="btn btn-success">Add</form:button>
+                                                <form:button id="removebuttons" type="reset" class="btn btn-danger">Reset</form:button>
+                                                </div>
+                                        </c:if>
+                                        <c:if test="${!check}">
+                                            <div class="row" style="padding-top: 100px">
+                                                <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                                <form:button id="editbuttons" type="submit" name="Edit" class="btn">Edit</form:button>
+                                                <form:button id="removebuttons" type="reset" class="btn">Reset</form:button>
+                                                </div>
+                                        </c:if>
+                            </form:form>>
 
 
-                                </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Voucher Type :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <select class="form-control"required="true">
-                                            <option value=""> --Select Voucher Type --</option>
-                                            <option value="Debit Voucher">Debit Voucher </option>
-                                            <option value="Credit Voucher">Credit Voucher</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right"> Root Head :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <select class="form-control"required="true">
-                                            <option value="">--Select Root Head --</option>
-                                            <option value="Account Recivable ">Account Receivable </option>
-                                            <option value="Account payable">Account payable</option>
-                                            <option value="Bank">Bank</option>
-                                            <option value="Office Equipment">Office Equipment</option>
-                                            <option value="Cash">Cash</option>
-
-
-                                        </select>
-                                    </div>
-
-                                </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Amount :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <input class="form-control" Placeholder="0.00" type="text" required="true"></input>
-                                    </div>
-
-                                </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Narration :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <input class="form-control" Placeholder="Narration" type="text" required="true"></input>
-                                    </div>
-
-                                </div>
-                                <div class="row" style="padding-top: 100px">
-                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                    <button type="submit" class="btn btn-success" id="editbuttons" name="Add">Add</button>
-                                    <button type="reset" class="btn btn-danger" id="removebuttons">Reset</button> 
-                                </div>
-
-
-
-                            </form>
                         </div>
 
+
                     </div>
+
                 </div>
+                <!-- /.container-fluid -->
 
-                <br>
-
-                <!-- panel body end -->
-                <!-- DataTables Example -->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fas fa-table"></i>
-                        List</div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-<!--                                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                                <thead>
-                                                                    <tr>
-                            
-                                                                        <th> ID</th>
-                                                                        <th>Author Name</th>
-                                                                        <th>Author Type</th>
-                                                                        <th>Action</th>
-                            
-                            
-                                                                    </tr>
-                                                                </thead>
-                                                                <tfoot>
-                                                                    <tr>
-                            
-                                                                        <th> ID</th>
-                                                                        <th>Author Name</th>
-                                                                        <th>Author Type</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </tfoot>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>####</td>
-                                                                        <td>####</td>
-                                                                        <td>####</td>
-                                                                        <td><a href="#"><button id="editbuttons" type="submit" class="btn">Edit</button></a> <a  href="#"><button id="removebuttons" type="button" class="btn btn-danger ">Delete</button></a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>-->
+                <!-- Sticky Footer -->
+                <footer class="sticky-footer">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span> Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin| Contact: +880 1933932636</span>
                         </div>
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
+                </footer>
+
             </div>
-            <!-- /.container-fluid -->
-
-            <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span> Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin</span>
-                    </div>
-                </div>
-            </footer>
+            <!-- /.content-wrapper -->
 
         </div>
-        <!-- /.content-wrapper -->
+        <!-- /#wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout">Logout</a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="logout">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="resources/dashboard/jquery/jquery.min.js"></script>
-    <script src="resources/dashboard/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="resources/dashboard/jquery/jquery.min.js"></script>
+        <script src="resources/dashboard/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="resources/dashboard/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="resources/dashboard/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugin JavaScript-->
-    <script src="resources/dashboard/chart/Chartmin.js"></script>
-    <script src="resources/dashboard/datatables/jquerydataTables.js"></script>
-    <script src="resources/dashboard/datatables/dataTablesbootstrap4.js"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="resources/dashboard/chart/Chartmin.js"></script>
+        <script src="resources/dashboard/datatables/jquerydataTables.js"></script>
+        <script src="resources/dashboard/datatables/dataTablesbootstrap4.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="resources/dashboard/jsnew/sb-adminmin.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="resources/dashboard/jsnew/sb-adminmin.js"></script>
 
-    <!-- Demo scripts for this page-->
-    <script src="resources/dashboard/jsnew/demo/datatablesdemo.js"></script>
-    <script src="resources/dashboard/jsnew/demo/chartareademo.js"></script>
-
+        <!-- Demo scripts for this page-->
+        <script src="resources/dashboard/jsnew/demo/datatablesdemo.js"></script>
+        <script src="resources/dashboard/jsnew/demo/chartareademo.js"></script>
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-</body>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+        <script>
+                                                            $(document).ready(function () {
+                                                                var date_input = $('input[name="tancsectiondate"]'); //our date input has the name "date"
+                                                                var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+                                                                date_input.datepicker({
+                                                                    format: 'yyyy/mm/dd',
+                                                                    container: container,
+                                                                    todayHighlight: true,
+                                                                    autoclose: true,
+                                                                })
+                                                            })
+        </script>
+    </body>
 </html>
 

@@ -14,6 +14,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -29,6 +31,18 @@ SessionFactory sessionfactory;
            Session s = sessionfactory.openSession();
         Transaction t = s.getTransaction();
         t.begin();
+         //if we get current user information then write this code . 
+             Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+
+            String username = ((UserDetails) principal).getUsername();
+            at.setU_id(username);
+        } else {
+
+            String username = principal.toString();
+            at.setU_id(username);
+        }
         s.save(at);
         t.commit();
         s.close();

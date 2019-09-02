@@ -40,15 +40,15 @@ public class ReceiveVoucherCtrl {
     public void myInitBinder(WebDataBinder binder) {
         //binder.setDisallowedFields(new String[]{"empMobile"});
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-        binder.registerCustomEditor(Date.class, "paydate", new CustomDateEditor(format, false));
+        binder.registerCustomEditor(Date.class, "tancsectiondate", new CustomDateEditor(format, false));
 //        binder.registerCustomEditor(String.class, "ename", new EmployeeNameEditor());
     }
     @RequestMapping("/cashrecived")
     public ModelAndView showcashrecivepage() {
-   String allrow= reciveservice.allrowcount();
+   int rand= reciveservice.receivegenareterendom();
          String allacchead = acchead.viewAccounthead();
         ModelAndView mv = new ModelAndView("cashrecivedvoucher", "recivevoucherobject",new MasterJournal());
-        mv.addObject("allrownum", allrow);
+        mv.addObject("randintnum", rand);
         mv.addObject("allcreditaccheadlist", allacchead);
         mv.addObject("check",true);
         return mv;

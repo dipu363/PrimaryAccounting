@@ -33,17 +33,17 @@
 
 
         <script>
-                var typelist = ${acctypelist};
+            var typelist = ${acctypelist};
 
 
 
-                angular.module('myapp', []).controller('addtypecontrl',
-                        function ($scope) {
-                            $scope.acctypelists = typelist;
+            angular.module('myapp', []).controller('addtypecontrl',
+                    function ($scope) {
+                        $scope.acctypelists = typelist;
 
 
-                            console.log($scope.acctypelists);
-                        });
+                        console.log($scope.acctypelists);
+                    });
         </script>
 
     </head>
@@ -86,23 +86,23 @@
         <div id="wrapper">
 
             <!-- Sidebar -->
-             <ul class="sidebar navbar-nav" style="background:  #0c5460">
+            <ul class="sidebar navbar-nav" style="background:  #0c5460">
                 <li class="nav-item active">
                     <a class="nav-link" href="admindeshboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Hello ${sessionScope.UserLoggedIn}</span>
                     </a>
                 </li>
-                
-                
-                     <li class="nav-item dropdown" >
+
+
+                <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
 
-                      <a class="dropdown-item" href="showAuthorpage">Author</a>
+                        <a class="dropdown-item" href="showAuthorpage">Author</a>
                         <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
                     </div>
@@ -113,36 +113,36 @@
                         <span>Account </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
-                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+
 
                     </div>
                 </li>
-                  <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Account Heads</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
-                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
+                        <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+
 
                     </div>
                 </li>
-              <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Payment Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashpayment">Cash Payment</a>
-                                                <a class="dropdown-item" href="chequepayment">Bank Payment</a>
-                                        
+
+                        <a class="dropdown-item" href="cashpayment">Cash Payment</a>
+                        <a class="dropdown-item" href="chequepayment">Bank Payment</a>
+
 
                     </div>
                 </li>
@@ -152,28 +152,28 @@
                         <span>Received Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
-                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
-                                        
+
+                        <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                        <a class="dropdown-item" href="cashrecived">Bank Receive</a>
+
 
                     </div>
                 </li>
-                    <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Journal Book</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="journalctrlpage">General Journal</a>
-                                                
-                                        
+
+                        <a class="dropdown-item" href="journalctrlpage">General Journal</a>
+
+
 
                     </div>
                 </li>
-                
-                
+
+
 
             </ul>
 
@@ -184,22 +184,22 @@
                     <!-- Breadcrumbs-->
                     <div class="row">
                         <div class="col-lg-10">
-                            
-                                <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="admindeshboard">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active">Account Type</li>
-                    </ol>
+
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="admindeshboard">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active">Account Type</li>
+                            </ol>
                         </div>
                         <div class="d-flex justify-content-end">
                             <a href="showaccountholderpage"><button id="editbuttons" type="submit" class="btn badge-success" style="font-size: 22px">Back</button></a>
-                            
+
                         </div>
-                 
-                
+
+
                     </div>
-                  
+
                     <!-- end panel heading -->
                     <div class="panel-body" ng-app="myapp" ng-controller="addtypecontrl" >
                         <div class="formcontainer ">
@@ -213,19 +213,19 @@
                                         <div class="col-sm-3">
                                             <h5 style="text-align: right">Account Type :</h5>
                                         </div>
-                                         <div class="form-group col-sm-6">
-                                           
-                                             <select class="form-control" ng-model="edittype" required="true">
+                                        <div class="form-group col-sm-6">
+
+                                            <select class="form-control" ng-model="edittype" required="true">
                                                 <option value="">--Select Account Type --</option>
                                                 <option value="Customer"> Customer</option>
                                                 <option value="Supplier"> Supplier</option>
-                                                  <option value="Employer"> Employer</option>
+                                                <option value="Employer"> Employer</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
-                                        <form:hidden  class="form-control" value="{{edittype}}" path="at_type"></form:hidden>
-                                        </div>                
+                                            <form:hidden  class="form-control" value="{{edittype}}" path="at_type"></form:hidden>
+                                            </div>                
 
                                         </div>
                                         <div class="row" style="margin-left: 100px">
@@ -279,22 +279,22 @@
                                         </div>
 
                                         <div class="row" style="margin-left: 100px">
-                                           <div class="col-sm-3">
-                                            <h5 style="text-align: right">Account Type :</h5>
-                                        </div>
-                                         <div class="form-group col-sm-6">
-                                           
-                                             <select class="form-control"ng-model="edittype" required="true">
-                                                <option value="">--Select Account Type --</option>
-                                                <option value="Customer"> Customer</option>
-                                                <option value="Supplier"> Supplier</option>
-                                                  <option value="Employer"> Employer</option>
-                                            </select>
-                                        </div>
+                                            <div class="col-sm-3">
+                                                <h5 style="text-align: right">Account Type :</h5>
+                                            </div>
+                                            <div class="form-group col-sm-6">
 
-                                        <div class="form-group">
-                                        <form:hidden  class="form-control" value="{{edittype}}" path="at_type"></form:hidden>
-                                        </div>   
+                                                <select class="form-control"ng-model="edittype" required="true">
+                                                    <option value="">--Select Account Type --</option>
+                                                    <option value="Customer"> Customer</option>
+                                                    <option value="Supplier"> Supplier</option>
+                                                    <option value="Employer"> Employer</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                            <form:hidden  class="form-control" value="{{edittype}}" path="at_type"></form:hidden>
+                                            </div>   
                                         </div>
                                         <div class="row" style="margin-left: 100px">
                                             <div class="col-sm-3">
@@ -339,9 +339,9 @@
                     <br>
 
                     <!-- panel body end -->
-                   
-        </div>
-                         <!-- Sticky Footer -->
+
+                </div>
+                <!-- Sticky Footer -->
                 <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">

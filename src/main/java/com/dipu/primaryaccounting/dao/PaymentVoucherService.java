@@ -17,5 +17,6 @@ public interface PaymentVoucherService {
     public String insertpaymet(MasterJournal mj);
 
     public String updatepayment(MasterJournal mj);
-    public String rowcount();
+
+    public int genareterendom();
 }

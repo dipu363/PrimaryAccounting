@@ -13,12 +13,11 @@ import org.springframework.stereotype.Service;
  * @author SKY IT
  */
 @Service
-public interface RecivedVoucherService {
+public interface JeneralJournalService {
 
-    public String insertrecived(MasterJournal mj);
+    public String insertjournal(MasterJournal mj);
 
-    public String updaterecived(MasterJournal mj);
+    public String updatejournal(MasterJournal mj);
 
-    public int receivegenareterendom();
-
+    public int genareterendom();
 }

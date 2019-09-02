@@ -10,13 +10,14 @@
 <html lang="en">
 
     <head>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Authorization</title>
+        <title>authorization</title>
         <link href="resources/dashboard/img/logo.ico" rel="shortcut icon" />
         <!-- Bootstrap core CSS-->
         <link href="resources/dashboard/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +31,18 @@
         <!-- Custom styles for this template-->
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
+        
+    <script>
+           var allmenu = ${menulists};
 
+            angular.module('myapp', []).controller('menuctrl',
+                    function ($scope) {
+                        $scope.allmenus = allmenu;
+
+
+                        console.log($scope.allmenus);
+                    });
+        </script>
     </head>
 
     <body id="page-top">
@@ -56,7 +68,7 @@
                         <i class="fas fa-user-circle fa-fw"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="admindeshboard">Hello ${sessionScope.UserloggedIn}</a>
+                        <a class="dropdown-item" href="admindeshboard">Hello ${sessionScope.UserLoggedIn}</a>
                         <a class="dropdown-item" href="<%=request.getContextPath()%>">Home</a>
                         <a class="dropdown-item" href="admindeshboard">Admin Signup</a>
 
@@ -166,73 +178,64 @@
 
                 <div class="container-fluid">
 
-                    <!-- Breadcrumbs-->
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="admindeshboard">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Authorization permission</li>
+                        <li class="breadcrumb-item active">Authorization</li>
                     </ol>
                     <!-- end panel heading -->
-                    
-                                <div class="panel-body" >
+                   
+                                <div class="panel-body" style="padding-bottom:  100px">
                         <div class="formcontainer ">
 
                             <c:if test="${check}">
                             <form:form name="addauthorobject"
-                                       modelAttribute="authorobject" action="Addingauthor"
+                                       modelAttribute="authorizationModelobject" action="Addingauthor"
                                        method="post">
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                             
+                                <div class="row" style="padding-top: 100px ; margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author ID :</h4>
+                                        <h5 style="text-align: right">Form Name :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Author ID" type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Form Name" type="text" path="form_name" required="true"></form:input>
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                <div class="row" style=" margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Form Name :</h4>
+                                        <h5 style="text-align: right">Permission:</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Form Name" type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Permission" type="text" path="parmisson" required="true"></form:input>
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                <div class="row" style=" margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Permission:</h4>
+                                        <h5 style="text-align: right">Insert :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Permission" type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Insert" type="text" path="p_insert" required="true"></form:input>
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                <div class="row" style=" margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Insert :</h4>
+                                        <h5 style="text-align: right">Update :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Insert" type="text" path="author_name" required="true"></form:input>
-                                    </div>
-
-                                </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Update :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Update" type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Update" type="text" path="p_update" required="true"></form:input>
                                     </div>
 
                                 </div>
                                 <div class="row" style="margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author Type :</h4>
+                                        <h5 style="text-align: right">Delete :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Delete" type="text" path="authr_type" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Delete" type="text" path="p_delete" required="true"></form:input>
                                     </div>
 
                                 </div>
@@ -245,68 +248,59 @@
                         </c:if>
                             <c:if test="${!check}">
                                         <form:form name="addauthorobject"
-                                       modelAttribute="authorobject" action="Addingauthor"
+                                       modelAttribute="authorizationModelobject" action="Addingauthor"
                                        method="post">
-                             <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                             <div class="row" style="padding-top: 100px ; margin-left: 100px">
                                     <div class="col-sm-3">
                                         <h4 style="text-align: right">ID :</h4>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="ID" type="text" path="a_id"  ></form:input>
+                                        <form:input class="form-control" Placeholder="ID" readonly="true" type="text" path="a_id"  ></form:input>
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                <div class="row" style=" margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author ID :</h4>
+                                        <h5 style="text-align: right">Form Name :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control"  type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Form Name" type="text" path="form_name" required="true"></form:input>
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                <div class="row" style=" margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Form Name :</h4>
+                                        <h5 style="text-align: right">Permission:</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Form Name" type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Permission" type="text" path="parmisson" required="true"></form:input>
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                <div class="row" style=" margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Permission:</h4>
+                                        <h5 style="text-align: right">Insert :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Permission" type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Insert" type="text" path="p_insert" required="true"></form:input>
                                     </div>
 
                                 </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                <div class="row" style=" margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Insert :</h4>
+                                        <h5 style="text-align: right">Update :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Insert" type="text" path="author_name" required="true"></form:input>
-                                    </div>
-
-                                </div>
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Update :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Update" type="text" path="author_name" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Update" type="text" path="p_update" required="true"></form:input>
                                     </div>
 
                                 </div>
                                 <div class="row" style="margin-left: 100px">
                                     <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author Type :</h4>
+                                        <h5 style="text-align: right">Delete :</h5>
                                     </div>
                                     <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="Delete" type="text" path="authr_type" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="Delete" type="text" path="p_delete" required="true"></form:input>
                                     </div>
 
                                 </div>
@@ -320,53 +314,13 @@
                             </c:if>
                         </div>
                     </div>
-                    
-<!--                    <div class="panel-body" >
-                        <div class="formcontainer ">
-
-
-                            <form>
-
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder="Author ID" type="text"></input>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder="Form Name" type="text"></input>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder=" Permission" type="text"></input>
-                                </div>
-
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder=" Insert" type="text"></input>
-                                </div>
-
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder=" Update" type="text" required="true"></input>
-                                </div>
-
-                                <div class="form-group">
-                                    <input class="form-control" Placeholder=" Delete" type="text" required="true"></input>
-                                </div>
-                               
-
-
-
-                                <button type="submit" class="btn btn-success" id="editbuttons" name="Add">Submit</button>
-                                <button type="reset" class="btn btn-danger" id="removebuttons">Reset Details</button>
-                            </form>
-
-                        </div>
-                    </div>-->
-
-                    <br>
-
+                  
                     <!-- panel body end -->
                     <!-- DataTables Example -->
                     <div class="card mb-3">
                         <div class="card-header">
                             <i class="fas fa-table"></i>
-                            Journal List</div>
+                            User Authorization list</div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -425,6 +379,7 @@
 
                     </div>
                 </div>
+                <!-- /.container-fluid -->
                 <!-- /.container-fluid -->
 
                 <!-- Sticky Footer -->

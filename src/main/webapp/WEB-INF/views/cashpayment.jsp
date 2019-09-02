@@ -31,14 +31,14 @@
         <!-- Custom styles for this template-->
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
-     <script>
-var totalrowno= ${totalrows};
+        <script>
+            var rendnum = ${rendint};
             var frootheads = ${allaccheadlist};
-       
+
             angular.module('myapp', []).controller('paymentctrl',
                     function ($scope) {
                         $scope.Yesrootheads = frootheads;
-                    $scope.totalcount = totalrowno;
+                        $scope.rendomintvelue = rendnum;
 
 
                         console.log($scope.Yesrootheads);
@@ -85,23 +85,23 @@ var totalrowno= ${totalrows};
         <div id="wrapper">
 
             <!-- Sidebar -->
-           <ul class="sidebar navbar-nav" style="background:  #0c5460">
+            <ul class="sidebar navbar-nav" style="background:  #0c5460">
                 <li class="nav-item active">
                     <a class="nav-link" href="admindeshboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Hello ${sessionScope.UserLoggedIn}</span>
                     </a>
                 </li>
-                
-                
-                     <li class="nav-item dropdown" >
+
+
+                <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
 
-                      <a class="dropdown-item" href="showAuthorpage">Author</a>
+                        <a class="dropdown-item" href="showAuthorpage">Author</a>
                         <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
                     </div>
@@ -112,36 +112,36 @@ var totalrowno= ${totalrows};
                         <span>Account </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
-                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+
 
                     </div>
                 </li>
-                  <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Account Heads</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
-                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
+                        <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+
 
                     </div>
                 </li>
-              <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Payment Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashpayment">Cash Payment</a>
-                                                <a class="dropdown-item" href="chequepayment">Bank Payment</a>
-                                        
+
+                        <a class="dropdown-item" href="cashpayment">Cash Payment</a>
+                        <a class="dropdown-item" href="chequepayment">Bank Payment</a>
+
 
                     </div>
                 </li>
@@ -151,28 +151,28 @@ var totalrowno= ${totalrows};
                         <span>Received Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
-                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
-                                        
+
+                        <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                        <a class="dropdown-item" href="cashrecived">Bank Receive</a>
+
 
                     </div>
                 </li>
-                    <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Journal Book</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="journalctrlpage">General Journal</a>
-                                                
-                                        
+
+                        <a class="dropdown-item" href="journalctrlpage">General Journal</a>
+
+
 
                     </div>
                 </li>
-                
-                
+
+
 
             </ul>
 
@@ -191,12 +191,12 @@ var totalrowno= ${totalrows};
                     <div class="panel-body">
                         <div class="formcontainer ">
                             <form:form commandName="paymentvoucherobject" action="addingpaymentvoucher"
-                                           enctype="multipart/form-data" >
+                                       enctype="multipart/form-data" >
 
-                                       <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
+                                <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
-                                        <h4>Voucher no :</h4>   
+                                        <h5>Voucher no :</h5>   
 
                                     </div>
 
@@ -204,72 +204,72 @@ var totalrowno= ${totalrows};
                                         <div class="row">
 
                                             <div class="col-sm-3">
-                                                <form:input class="form-control" Placeholder="Last Voucher No {{totalcount}}"  path="voucher_no" required="true"></form:input>
-                                            </div>
-                                            <div class="col-sm-2" style="text-align: right"> 
-                                                <h4>Date:</h4>  
-                                            </div>
-                                            <div class="col-sm-3">
+                                                <form:input class="form-control" value="{{rendomintvelue}}"  path="voucher_no" readonly="true"></form:input>
+                                                </div>
+                                                <div class="col-sm-2" style="text-align: right"> 
+                                                    <h5>Date:</h5>  
+                                                </div>
+                                                <div class="col-sm-3">
 
-                                            <form:input class="form-control" placeholder="Date" path="paydate" type="text"></form:input>
+                                                <form:input class="form-control" placeholder="Date" path="tancsectiondate" type="text"></form:input>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                      
-                                              <div class="row" style=" margin-left: 100px">
-                                            <div class="col-sm-3">
-                                                <h5 style="text-align: right">Account Title :</h5>
-                                            </div>
-                                            <div class="form-group col-sm-6" >
-                                                <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in Yesrootheads" required="true">
-                                                    <option value="">--Choose Account Title--</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                            <form:hidden  class="form-control" value="{{accname}}" path="ac_id"></form:hidden>
-                                            </div>
 
+                                    <div class="row" style=" margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h5 style="text-align: right">Account Title :</h5>
                                         </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Amount :</h4>
+                                        <div class="form-group col-sm-6" >
+                                            <select class="form-control" ng-model="accname" ng-options=" x.ac_id as x.ac_name for x in Yesrootheads" required="true">
+                                                <option value="">--Choose Account Title--</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                        <form:hidden  class="form-control" value="{{accname}}" path="ac_id"></form:hidden>
+                                        </div>
+
                                     </div>
-                                    <div class="form-group col-sm-6" >
+                                    <div class="row" style="margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h5 style="text-align: right">Amount :</h5>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
                                         <form:input class="form-control" Placeholder="0.00" path="debit" type="text" required="true"></form:input>
+                                        </div>
+
+                                    </div>
+                                    <div class="row" style="margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h5 style="text-align: right">Narration :</h5>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                        <form:input class="form-control" Placeholder="Narration" type="text" path="narration" required="true"></form:input>
+                                        </div>
+
                                     </div>
 
-                                </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Narration :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                    <form:input class="form-control" Placeholder="Narration" type="text" path="narration" required="true"></form:input>
-                                    </div>
-
-                                </div>
-                    
                                 <c:if test="${check}">
-                                     <div class="row" style="padding-top: 100px">
-                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                <form:button id="editbuttons" type="submit" name="Add" class="btn btn-success">Add</form:button>
-                                <form:button id="removebuttons" type="reset" class="btn btn-danger">Reset</form:button>
-                                     </div>
-                            </c:if>
-                            <c:if test="${!check}">
-                                 <div class="row" style="padding-top: 100px">
-                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                <form:button id="editbuttons" type="submit" name="Edit" class="btn">Edit</form:button>
-                                <form:button id="removebuttons" type="reset" class="btn">Reset</form:button>
-                                 </div>
-                            </c:if>
-                                </form:form>
-                         
-                           
+                                    <div class="row" style="padding-top: 100px">
+                                        <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                        <form:button id="editbuttons" type="submit" name="Add" class="btn btn-success">Add</form:button>
+                                        <form:button id="removebuttons" type="reset" class="btn btn-danger">Reset</form:button>
+                                        </div>
+                                </c:if>
+                                <c:if test="${!check}">
+                                    <div class="row" style="padding-top: 100px">
+                                        <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                        <form:button id="editbuttons" type="submit" name="Edit" class="btn">Edit</form:button>
+                                        <form:button id="removebuttons" type="reset" class="btn">Reset</form:button>
+                                        </div>
+                                </c:if>
+                            </form:form>
+
+
                         </div>
-                        
-                        
+
+
                     </div>
 
                 </div>
@@ -339,16 +339,16 @@ var totalrowno= ${totalrows};
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
         <script>
-                                                $(document).ready(function () {
-                                                    var date_input = $('input[name="paydate"]'); //our date input has the name "date"
-                                                    var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-                                                    date_input.datepicker({
-                                                        format: 'yyyy/mm/dd',
-                                                        container: container,
-                                                        todayHighlight: true,
-                                                        autoclose: true,
-                                                    })
-                                                })
+                                                        $(document).ready(function () {
+                                                            var date_input = $('input[name="tancsectiondate"]'); //our date input has the name "date"
+                                                            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+                                                            date_input.datepicker({
+                                                                format: 'yyyy/mm/dd',
+                                                                container: container,
+                                                                todayHighlight: true,
+                                                                autoclose: true,
+                                                            })
+                                                        })
         </script>
     </body>
 </html>

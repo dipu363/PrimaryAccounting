@@ -31,19 +31,19 @@
         <!-- Custom styles for this template-->
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
-        
-    <script>
-            var authorlist = ${authormodelobject};
+
+        <script>
+        var authorlist = ${authormodelobject};
 
 
 
-            angular.module('myapp', []).controller('authorctrl',
-                    function ($scope) {
-                        $scope.authorlists = authorlist;
+        angular.module('myapp', []).controller('authorctrl',
+                function ($scope) {
+                    $scope.authorlists = authorlist;
 
 
-                        console.log($scope.authorlists);
-                    });
+                    console.log($scope.authorlists);
+                });
         </script>
     </head>
 
@@ -92,16 +92,16 @@
                         <span>Hello ${sessionScope.UserLoggedIn}</span>
                     </a>
                 </li>
-                
-                
-                     <li class="nav-item dropdown" >
+
+
+                <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Setting</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388"  aria-labelledby="pagesDropdown">
 
-                      <a class="dropdown-item" href="showAuthorpage">Author</a>
+                        <a class="dropdown-item" href="showAuthorpage">Author</a>
                         <a class="dropdown-item" href="userauthorizationpage">Authorization permission</a>
                         <a class="dropdown-item" href="showmenuctrlpage">Menu</a>  
                     </div>
@@ -112,36 +112,36 @@
                         <span>Account </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
-                                                <a class="dropdown-item" href="showaccountholderpage">Account List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccountholderpage">Add Account</a>
+                        <a class="dropdown-item" href="showaccountholderpage">Account List</a>
+
 
                     </div>
                 </li>
-                  <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Account Heads</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                             <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
-                                                 <a class="dropdown-item" href="showaccounthead">Account Head List</a>
-                                        
+
+                        <a class="dropdown-item" href="addaccounthead"> Add Account Head</a>
+                        <a class="dropdown-item" href="showaccounthead">Account Head List</a>
+
 
                     </div>
                 </li>
-              <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Payment Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashpayment">Cash Payment</a>
-                                                <a class="dropdown-item" href="chequepayment">Bank Payment</a>
-                                        
+
+                        <a class="dropdown-item" href="cashpayment">Cash Payment</a>
+                        <a class="dropdown-item" href="chequepayment">Bank Payment</a>
+
 
                     </div>
                 </li>
@@ -151,28 +151,28 @@
                         <span>Received Voucher </span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="cashrecived">Cash Receive</a>
-                                                <a class="dropdown-item" href="cashrecived">Bank Receive</a>
-                                        
+
+                        <a class="dropdown-item" href="cashrecived">Cash Receive</a>
+                        <a class="dropdown-item" href="cashrecived">Bank Receive</a>
+
 
                     </div>
                 </li>
-                    <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Journal Book</span>
                     </a>
                     <div class="dropdown-menu"  style="background:  #02a388" aria-labelledby="pagesDropdown">
-                        
-                                            <a class="dropdown-item" href="journalctrlpage">General Journal</a>
-                                                
-                                        
+
+                        <a class="dropdown-item" href="journalctrlpage">General Journal</a>
+
+
 
                     </div>
                 </li>
-                
-                
+
+
 
             </ul>
 
@@ -191,72 +191,72 @@
                         <div class="formcontainer ">
 
                             <c:if test="${check}">
-                            <form:form name="addauthorobject"
-                                       modelAttribute="authorobject" action="Addingauthor"
-                                       method="post">
-                                <div class="row" style="padding-top: 50px ; margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author Name :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="author name" type="text" path="author_name" required="true"></form:input>
-                                    </div>
+                                <form:form name="addauthorobject"
+                                           modelAttribute="authorobject" action="Addingauthor"
+                                           method="post">
+                                    <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h4 style="text-align: right">Author Name :</h4>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="author name" type="text" path="author_name" required="true"></form:input>
+                                            </div>
 
-                                </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author Type :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="author type" type="text" path="author_type" required="true"></form:input>
-                                    </div>
+                                        </div>
+                                        <div class="row" style="margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h4 style="text-align: right">Author Type :</h4>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="author type" type="text" path="author_type" required="true"></form:input>
+                                            </div>
 
-                                </div>
-                                <div class="row" style="padding-top: 100px">
-                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                 <form:button type="submit" class="btn btn-success" id="editbuttons" name="Addauthor">Submit</form:button>
-                                    <form:button type="reset" class="btn btn-danger" id="removebuttons">Reset</form:button>
-                                </div>
-                            </form:form>
-                        </c:if>
+                                        </div>
+                                        <div class="row" style="padding-top: 100px">
+                                            <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                        <form:button type="submit" class="btn btn-success" id="editbuttons" name="Addauthor">Submit</form:button>
+                                        <form:button type="reset" class="btn btn-danger" id="removebuttons">Reset</form:button>
+                                        </div>
+                                </form:form>
+                            </c:if>
                             <c:if test="${!check}">
-                                        <form:form name="addauthorobject"
-                                       modelAttribute="authorobject" action="Addingauthor"
-                                       method="post">
-                             <div class="row" style="padding-top: 50px ; margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">ID :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="ID" type="text" path="a_id" ></form:input>
-                                    </div>
+                                <form:form name="addauthorobject"
+                                           modelAttribute="authorobject" action="Addingauthor"
+                                           method="post">
+                                    <div class="row" style="padding-top: 50px ; margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h4 style="text-align: right">ID :</h4>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="ID" type="text" path="a_id" ></form:input>
+                                            </div>
 
-                                </div>
-                                <div class="row" style=" margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author Name :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="author name" type="text" path="author_name" required="true"></form:input>
-                                    </div>
+                                        </div>
+                                        <div class="row" style=" margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h4 style="text-align: right">Author Name :</h4>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="author name" type="text" path="author_name" required="true"></form:input>
+                                            </div>
 
-                                </div>
-                                <div class="row" style="margin-left: 100px">
-                                    <div class="col-sm-3">
-                                        <h4 style="text-align: right">Author Type :</h4>
-                                    </div>
-                                    <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="author type" type="text" path="author_type" required="true"></form:input>
-                                    </div>
+                                        </div>
+                                        <div class="row" style="margin-left: 100px">
+                                            <div class="col-sm-3">
+                                                <h4 style="text-align: right">Author Type :</h4>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                            <form:input class="form-control" Placeholder="author type" type="text" path="author_type" required="true"></form:input>
+                                            </div>
 
-                                </div>
-                                <div class="row" style="padding-top: 100px">
-                                    <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                   <form:button id="editbuttons" type="submit" class="btn btn-success " name="Editauthor">Edit </form:button>
-                                    <form:button id="removebuttons" type="reset" class="btn btn-danger ">Reset</form:button>
-                                </div>
-                            </form:form>
-                                
+                                        </div>
+                                        <div class="row" style="padding-top: 100px">
+                                            <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                        <form:button id="editbuttons" type="submit" class="btn btn-success " name="Editauthor">Edit </form:button>
+                                        <form:button id="removebuttons" type="reset" class="btn btn-danger ">Reset</form:button>
+                                        </div>
+                                </form:form>
+
                             </c:if>
                         </div>
                     </div>
@@ -293,17 +293,17 @@
                                     <tbody>
                                         <tr ng-repeat="auth in authorlists">
                                             <td>{{auth.a_id}}</td>
-                                             <td>{{auth.author_name}}</td>
+                                            <td>{{auth.author_name}}</td>
                                             <td>{{auth.author_type}}</td>
                                             <td>{{auth.author_status}}</td>
-                                           <td><a href="editauthorbutton?getid={{auth.a_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a> <a href="removeauthor/{{auth.a_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
+                                            <td><a href="editauthorbutton?getid={{auth.a_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a> <a href="removeauthor/{{auth.a_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <!-- /.container-fluid -->

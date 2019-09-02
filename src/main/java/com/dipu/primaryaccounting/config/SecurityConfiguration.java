@@ -30,6 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/admindeshboard").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/userauthorizationpage").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/showAuthorpage").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/showmenuctrlpage").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/addaccounthead").access("hasRole('ROLE_ADMIN')")
@@ -38,7 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/showuserauthorizationctrlpage").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/paymentvoucherctrlpage").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/receivedvoucherctrlpage").access("hasRole('ROLE_ADMIN')")
-                
+               
                 .and().formLogin().loginPage("/login").loginProcessingUrl("/perform_login")
                 .successForwardUrl("/loginsuccess").usernameParameter("username")
                 .passwordParameter("userpassword").failureUrl("/login")

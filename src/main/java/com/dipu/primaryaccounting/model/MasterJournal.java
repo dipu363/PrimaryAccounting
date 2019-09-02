@@ -33,7 +33,7 @@ public class MasterJournal implements Serializable {
     @Column
     private String voucher_no;
     @Temporal(TemporalType.DATE)
-    private Date paydate;
+    private Date tancsectiondate;
     @Column
     private String voucher_type;
     @Column
@@ -55,8 +55,7 @@ public class MasterJournal implements Serializable {
         this.sec_status = sec_status;
     }
 
-
-      public String getU_id() {
+    public String getU_id() {
         return u_id;
     }
 
@@ -64,12 +63,12 @@ public class MasterJournal implements Serializable {
         this.u_id = u_id;
     }
 
-    public Date getPaydate() {
-        return paydate;
+    public Date getTancsectiondate() {
+        return tancsectiondate;
     }
 
-    public void setPaydate(Date paydate) {
-        this.paydate = paydate;
+    public void setTancsectiondate(Date tancsectiondate) {
+        this.tancsectiondate = tancsectiondate;
     }
 
     public double getDebit() {
@@ -88,8 +87,6 @@ public class MasterJournal implements Serializable {
         this.credit = credit;
     }
 
-  
-
     public int getM_id() {
         return m_id;
     }
@@ -105,8 +102,6 @@ public class MasterJournal implements Serializable {
     public void setM_id(int m_id) {
         this.m_id = m_id;
     }
-
-
 
     public int getCompany_id() {
         return company_id;

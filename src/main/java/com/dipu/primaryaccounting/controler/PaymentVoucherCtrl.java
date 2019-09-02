@@ -15,7 +15,6 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -35,46 +34,42 @@ public class PaymentVoucherCtrl {
     @Autowired
     AccountHeadService acchead;
 
-     @InitBinder
+    @InitBinder
     public void myInitBinder(WebDataBinder binder) {
         //binder.setDisallowedFields(new String[]{"empMobile"});
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-        binder.registerCustomEditor(Date.class, "paydate", new CustomDateEditor(format, false));
+        binder.registerCustomEditor(Date.class, "tancsectiondate", new CustomDateEditor(format, false));
 //        binder.registerCustomEditor(String.class, "ename", new EmployeeNameEditor());
     }
 
     @RequestMapping("/cashpayment")
     public ModelAndView showsubjectpage() {
         String allacchead = acchead.viewroothead();
-        String allrows= payservice.rowcount();
+        int rendnumber = payservice.genareterendom();
         ModelAndView mv = new ModelAndView("cashpayment", "paymentvoucherobject", new MasterJournal());
         mv.addObject("allaccheadlist", allacchead);
-        mv.addObject("totalrows", allrows);
-        mv.addObject("check",true);
+        mv.addObject("rendint", rendnumber);
+        mv.addObject("check", true);
 
         return mv;
     }
-    
-        @RequestMapping("/chequepayment")
+
+    @RequestMapping("/chequepayment")
     public ModelAndView gochequepayment() {
         String allacchead = acchead.viewroothead();
 
         ModelAndView mv = new ModelAndView("chequepayment", "paymentvoucherobject", new MasterJournal());
         mv.addObject("allaccheadlist", allacchead);
-        mv.addObject("check",true);
+        mv.addObject("check", true);
 
         return mv;
     }
 
-    @RequestMapping(value = "/addingpaymentvoucher", params = "Add")
-    public String addmenu(@ModelAttribute("paymentvoucherobject") MasterJournal mj) { 
+    @RequestMapping(value = "/addjeneraljournal", params = "Add")
+    public String addmenu(@ModelAttribute("paymentvoucherobject") MasterJournal mj) {
         mj.setVoucher_type("Debit Voucher");
-
         payservice.insertpaymet(mj);
-       
         return "redirect:/cashpayment";
     }
-    
-    
 
 }

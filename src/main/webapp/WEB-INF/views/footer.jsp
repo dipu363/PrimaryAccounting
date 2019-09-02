@@ -27,21 +27,21 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-sm-4 agileinfo-copyright">
-                 <p>Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin</p>
-                  </div>
-                   <div class="col-md-2 col-sm-4 agileinfo-icons">
-                       
-                       
-                       <a class="icon fb" href="#"><i class="fa fa-facebook"></i></a>
-                       <a class="icon tw" href="#"><i class="fa fa-twitter"></i></a>
-                       <a class="icon pin" href="#"><i class="fa fa-pinterest"></i></a>
-                       <a class="icon db" href="#"><i class="fa fa-dribbble"></i></a>
-                       <a class="icon gp" href="#"><i class="fa fa-google-plus"></i></a>
-             
+                <p>Copyrights and copy 2018  | All Rights Reserved | Design by Giyas uddin</p>
+            </div>
+            <div class="col-md-2 col-sm-4 agileinfo-icons">
+
+
+                <a class="icon fb" href="#"><i class="fa fa-facebook"></i></a>
+                <a class="icon tw" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="icon pin" href="#"><i class="fa fa-pinterest"></i></a>
+                <a class="icon db" href="#"><i class="fa fa-dribbble"></i></a>
+                <a class="icon gp" href="#"><i class="fa fa-google-plus"></i></a>
+
             </div>
             <div class="clearfix"></div>
 
-          
+
         </div>
     </div>
 </footer>

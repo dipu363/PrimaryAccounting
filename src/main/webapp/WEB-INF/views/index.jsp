@@ -12,7 +12,7 @@
         <title>primary accounting</title>
     </head>
     <body>
-  
+
         <a href="login">Please login</a>
         <a href="signup">sign up</a>
     </body>
