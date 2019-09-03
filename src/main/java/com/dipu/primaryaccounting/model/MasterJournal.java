@@ -46,6 +46,14 @@ public class MasterJournal implements Serializable {
     private double credit;
     @Transient
     private String sec_status;
+    @Transient
+    private String demovouchertype;
+    @Transient
+    private String demoacchead;
+    @Transient
+    private double demodebittk;
+    @Transient
+    private double democredittk;
 
     public String getSec_status() {
         return sec_status;
@@ -134,5 +142,38 @@ public class MasterJournal implements Serializable {
     public void setNarration(String narration) {
         this.narration = narration;
     }
+
+    public String getDemovouchertype() {
+        return demovouchertype;
+    }
+
+    public void setDemovouchertype(String demovouchertype) {
+        this.demovouchertype = demovouchertype;
+    }
+
+    public String getDemoacchead() {
+        return demoacchead;
+    }
+
+    public void setDemoacchead(String demoacchead) {
+        this.demoacchead = demoacchead;
+    }
+
+    public double getDemodebittk() {
+        return demodebittk;
+    }
+
+    public void setDemodebittk(double demodebittk) {
+        this.demodebittk = demodebittk;
+    }
+
+    public double getDemocredittk() {
+        return democredittk;
+    }
+
+    public void setDemocredittk(double democredittk) {
+        this.democredittk = democredittk;
+    }
+    
 
 }

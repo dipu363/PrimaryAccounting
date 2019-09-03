@@ -47,10 +47,14 @@ public class JeneralJournalCtrl {
 
         String allacchead = acchead.viewroothead();
         int rendnumber = journalservice.genareterendom();
+        String demojour = journalservice.viewdemodetails();
         ModelAndView mv = new ModelAndView("generaljournal", "generaljournalModelobject", new MasterJournal());
         mv.addObject("allaccheadlist", allacchead);
         mv.addObject("rendint", rendnumber);
+        mv.addObject("demodetail", demojour);
         mv.addObject("check", "true");
+       
+        
         return mv;
     }
     

@@ -32,13 +32,15 @@
         <link href="resources/dashboard/cssnew/sb-admin.css" rel="stylesheet">
         <script src="resources/dashboard/js/angular.js"></script>
         <script>
-
-         var num = ${rendint};
-         var frootheads = ${allaccheadlist};
+            var demojournal = ${demodetail};
+            var num = ${rendint};
+            var frootheads = ${allaccheadlist};
+            ;
 
             angular.module('myapp', []).controller('paymentctrl',
                     function ($scope) {
                         $scope.Yesrootheads = frootheads;
+                        $scope. demodtails = demojournal;
                         $scope.randvalue = num;
 
 
@@ -193,10 +195,6 @@
                             <form:form commandName="generaljournalModelobject" action="addingpaymentvoucher"
                                        enctype="multipart/form-data" >
 
-
-
-
-
                                 <div class="row" style="padding-top:100px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
@@ -221,7 +219,24 @@
                                         </div>
                                     </div>
 
-                                    <div class="row" style="padding-top:100px ; margin-left: 100px">
+                                    <div class="row" style="padding-top:50px;  margin-left: 100px">
+                                        <div class="col-sm-3">
+                                            <h5 style="text-align: right">Voucher Type:</h5>
+                                        </div>
+                                        <div class="form-group col-sm-6" >
+                                            <select class="form-control" ng-model="voucher" required="true">
+                                                <option value="">--Choose Voucher--</option>
+                                                <option value="Debit">Debit Voucher</option>
+                                                <option value="Credit">Credit Voucher</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                        <form:hidden  class="form-control" value="{{voucher}}" path="voucher_type" required="true"></form:hidden>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row" style=" margin-left: 100px">
                                         <div class="col-sm-3">
                                             <h5 style="text-align: right">Account Title :</h5>
                                         </div>
@@ -235,12 +250,14 @@
                                         </div>
 
                                     </div>
+                                        
+                                       
                                     <div class="row" style="margin-left: 100px">
                                         <div class="col-sm-3">
                                             <h4 style="text-align: right">Amount :</h4>
                                         </div>
                                         <div class="form-group col-sm-6" >
-                                        <form:input class="form-control" Placeholder="0.00" path="credit" type="text" required="true"></form:input>
+                                        <form:input class="form-control" Placeholder="0.0" path="credit" type="text" required="true"></form:input>
                                         </div>
 
                                     </div>
@@ -254,21 +271,21 @@
 
                                     </div>
 
-                                        <c:if test="${check}">
-                                            <div class="row" style="padding-top: 100px">
-                                                <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                                <form:button id="editbuttons" type="submit" name="Add" class="btn btn-success">Add</form:button>
-                                                <form:button id="removebuttons" type="reset" class="btn btn-danger">Reset</form:button>
-                                                </div>
-                                        </c:if>
-                                        <c:if test="${!check}">
-                                            <div class="row" style="padding-top: 100px">
-                                                <div class="col-sm-8 " style="align-content: flex-end "></div>
-                                                <form:button id="editbuttons" type="submit" name="Edit" class="btn">Edit</form:button>
-                                                <form:button id="removebuttons" type="reset" class="btn">Reset</form:button>
-                                                </div>
-                                        </c:if>
-                            </form:form>>
+                                <c:if test="${check}">
+                                    <div class="row" style="padding-top: 100px">
+                                        <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                        <form:button id="editbuttons" type="submit" name="Add" class="btn btn-success">Add</form:button>
+                                        <form:button id="removebuttons" type="reset" class="btn btn-danger">Reset</form:button>
+                                        </div>
+                                </c:if>
+                                <c:if test="${!check}">
+                                    <div class="row" style="padding-top: 100px">
+                                        <div class="col-sm-8 " style="align-content: flex-end "></div>
+                                        <form:button id="editbuttons" type="submit" name="Edit" class="btn">Edit</form:button>
+                                        <form:button id="removebuttons" type="reset" class="btn">Reset</form:button>
+                                        </div>
+                                </c:if>
+                            </form:form>
 
 
                         </div>
@@ -278,7 +295,44 @@
 
                 </div>
                 <!-- /.container-fluid -->
+                <div class="container-fluid" style="padding-top: 100px" >
+                       
+                            <div class="table-responsive">
+                                <table class="table table-bordered" cellspacing="0" style="width:70% ; margin-left: 10%">
+                                    <thead>
+                                        <tr >
 
+                                            <th>Voucher Type</th>
+                                            <th> Head name</th>
+                                            <th> Debit Tk</th>
+                                            <th> Credit Tk</th>
+                                            <th>Action </th>
+
+                                        </tr>
+                             </thead>
+                                  
+                                    <tbody>
+                                        <tr ng-repeat="demo in demodtails">
+                                            <td>${demo.demovouchertype}</td>
+                                            <td>${demo.demoacchead}</td>
+                                            <td>${demo.demodebittk}</td>
+                                            <td>${demo.democredittk}</td>      
+                                            <td><a href="#"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a>  <a  href="#"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                   
+                       
+                    
+
+                </div>
+                <div class="container-fluid" style="padding-top: 100px" >
+                    
+                    
+                    
+                </div>
                 <!-- Sticky Footer -->
                 <footer class="sticky-footer">
                     <div class="container my-auto">
@@ -343,16 +397,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
         <script>
-                                                            $(document).ready(function () {
-                                                                var date_input = $('input[name="tancsectiondate"]'); //our date input has the name "date"
-                                                                var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-                                                                date_input.datepicker({
-                                                                    format: 'yyyy/mm/dd',
-                                                                    container: container,
-                                                                    todayHighlight: true,
-                                                                    autoclose: true,
-                                                                })
+                                                        $(document).ready(function () {
+                                                            var date_input = $('input[name="tancsectiondate"]'); //our date input has the name "date"
+                                                            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+                                                            date_input.datepicker({
+                                                                format: 'yyyy/mm/dd',
+                                                                container: container,
+                                                                todayHighlight: true,
+                                                                autoclose: true,
                                                             })
+                                                        })
         </script>
     </body>
 </html>

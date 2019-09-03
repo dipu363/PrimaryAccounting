@@ -6,8 +6,11 @@
 package com.dipu.primaryaccounting.daoimpl;
 
 import com.dipu.primaryaccounting.dao.JeneralJournalService;
+import com.dipu.primaryaccounting.model.Demojournal;
 import com.dipu.primaryaccounting.model.MasterJournal;
 import com.dipu.primaryaccounting.model.SecondaryJournal;
+import com.google.gson.Gson;
+import java.util.List;
 import java.util.Random;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -46,11 +49,21 @@ public class JeneralJournalServiceImpl implements JeneralJournalService {
             mj.setU_id(username);
         }
         SecondaryJournal secjournal = new SecondaryJournal();
+        Demojournal demojournal = new Demojournal();
 
+        
+        if(mj.getDebit()!=0){
         secjournal.setM_id(mj.getM_id());
         secjournal.setDebit(mj.getDebit());
         secjournal.setCredit(mj.getDebit());
         secjournal.setAc_id(mj.getAc_id());
+        }else{
+        secjournal.setM_id(mj.getM_id());
+        secjournal.setDebit(mj.getCredit());
+        secjournal.setCredit(mj.getCredit()); 
+        secjournal.setAc_id(mj.getAc_id());
+        }
+        
         s.save(mj);
         s.save(secjournal);
         t.commit();
@@ -72,6 +85,21 @@ public class JeneralJournalServiceImpl implements JeneralJournalService {
 
         return rand_num;
 
+    }
+
+    @Override
+    public String viewdemodetails() {
+           Session s = sf.openSession();
+        Transaction t = s.getTransaction();
+        t.begin();
+        //if show data like status then write this coad ; or seccond line
+        List<Demojournal> demolist = s.createQuery("from Demojournal").list();
+       //  List<Accounttype> accountlist = s.createQuery("from Accounttype").list();
+        Gson g = new Gson();
+        String demojournaljson = g.toJson(demolist);
+        t.commit();
+        s.close();
+        return demojournaljson;
     }
 
 }

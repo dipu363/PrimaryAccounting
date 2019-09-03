@@ -234,7 +234,7 @@
                                         </div>
                                         <div class="row" style=" margin-left: 100px">
                                             <div class="col-sm-3">
-                                                <h5 style="text-align: right">Root :</h5>
+                                                <h5 style="text-align: right">Root status :</h5>
                                             </div>
                                             <div class="form-group col-sm-6" >
                                                 <select class="form-control" ng-model="root" required="true">

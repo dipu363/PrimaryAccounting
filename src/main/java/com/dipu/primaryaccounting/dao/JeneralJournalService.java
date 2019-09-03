@@ -18,6 +18,7 @@ public interface JeneralJournalService {
     public String insertjournal(MasterJournal mj);
 
     public String updatejournal(MasterJournal mj);
+    public String viewdemodetails();
 
     public int genareterendom();
 }
