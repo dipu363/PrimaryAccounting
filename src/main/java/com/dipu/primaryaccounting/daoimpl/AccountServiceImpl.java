@@ -54,6 +54,18 @@ SessionFactory sessionfactory;
        Session s = sessionfactory.openSession();
         Transaction t = s.getTransaction();
         t.begin();
+             //if we get current user information then write this code . 
+             Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+
+            String username = ((UserDetails) principal).getUsername();
+            actype.setU_id(username);
+        } else {
+
+            String username = principal.toString();
+            actype.setU_id(username);
+        }
         s.update(actype);
         t.commit();
         s.close();
@@ -67,6 +79,18 @@ SessionFactory sessionfactory;
         Transaction t = s.getTransaction();
         t.begin();
         Accounttype type = (Accounttype) s.get(Accounttype.class, id);
+                 //if we get current user information then write this code . 
+             Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+
+            String username = ((UserDetails) principal).getUsername();
+            type.setU_id(username);
+        } else {
+
+            String username = principal.toString();
+            type.setU_id(username);
+        }
         type.setStatus("Deleted");
         s.update(type);
         t.commit();

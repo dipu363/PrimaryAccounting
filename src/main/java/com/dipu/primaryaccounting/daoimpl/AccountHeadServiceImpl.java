@@ -58,6 +58,18 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         Session s = sessionfactory.openSession();
         Transaction t = s.getTransaction();
         t.begin();
+                 //if we get current user information then write this code . 
+             Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+
+            String username = ((UserDetails) principal).getUsername();
+            head.setU_id(username);
+        } else {
+
+            String username = principal.toString();
+            head.setU_id(username);
+        }
         s.update(head);
         t.commit();
         s.close();
@@ -70,6 +82,18 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         Transaction t = s.getTransaction();
         t.begin();
         AccountChart head = (AccountChart) s.get(AccountChart.class, id);
+                     //if we get current user information then write this code . 
+             Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+
+            String username = ((UserDetails) principal).getUsername();
+            head.setU_id(username);
+        } else {
+
+            String username = principal.toString();
+            head.setU_id(username);
+        }
         head.setStatus("Deleted");
         s.update(head);
         t.commit();
