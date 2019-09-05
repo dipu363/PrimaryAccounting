@@ -61,9 +61,9 @@ public class AccountHolderCtrl {
     public ModelAndView passingoneaccount(@RequestParam("getid") int accountId) {
         Accounttype oneacountype = aser.viewoneAccounttype(accountId);
         String typelist = aser.viewAccounttype();
-        ModelAndView mv = new ModelAndView("showaccountholder", "showaccountModelobject", oneacountype);
+        ModelAndView mv = new ModelAndView("addaccountholder", "addaccountModelobject", oneacountype);
         mv.addObject("acctypelist", typelist);
-        mv.addObject("check", true);
+        mv.addObject("check", false);
         return mv;
     }
 

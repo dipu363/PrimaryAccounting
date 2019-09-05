@@ -70,6 +70,7 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         Transaction t = s.getTransaction();
         t.begin();
         AccountChart head = (AccountChart) s.get(AccountChart.class, id);
+        head.setStatus("Deleted");
         s.update(head);
         t.commit();
         s.close();
@@ -82,7 +83,7 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         Transaction t = s.getTransaction();
         t.begin();
         //if show data like status then write this coad ; or seccond line
-        //  List<Accounttype> accountlist = s.createQuery("from Accounttype where status ='Active'").list();
+        //List<Accounttype> accountlist = s.createQuery("from Accounttype where status ='Active'").list();
         List<AccountChart> accountheadlist = s.createQuery("from AccountChart").list();
         Gson g = new Gson();
         String accountlistgson = g.toJson(accountheadlist);
@@ -110,7 +111,7 @@ public class AccountHeadServiceImpl implements AccountHeadService {
         Transaction t = s.getTransaction();
         t.begin();
         //if show data like status then write this coad ; or seccond line
-          List<AccountChart> falserootheadlist = s.createQuery("from AccountChart where root = 'Yes'").list();
+          List<AccountChart> falserootheadlist = s.createQuery("from AccountChart where root = 'Not'").list();
         
         Gson g = new Gson();
         String accountlistgson = g.toJson(falserootheadlist);

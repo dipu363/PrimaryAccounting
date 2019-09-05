@@ -26,7 +26,7 @@ public class Author implements Serializable {
     @Column
     private String author_type;
     @Column
-    private String author_status="True";
+    private String author_status="Active";
 
 
 

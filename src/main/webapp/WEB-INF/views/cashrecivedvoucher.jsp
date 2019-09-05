@@ -200,7 +200,7 @@
                                 <div class="row" style="padding-bottom: 50px ; margin-left: 100px"> 
 
                                     <div class="col-sm-3" style="text-align: right">
-                                        <h4> Type Voucher no :</h4>   
+                                        <h4>Voucher no :</h4>   
 
                                     </div>
 

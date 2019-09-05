@@ -33,7 +33,7 @@ public class AccountChart implements Serializable {
     @Column
     private String root;
     @Column
-    private String status="true";
+    private String status="Active";
 
     public int getAc_id() {
         return ac_id;

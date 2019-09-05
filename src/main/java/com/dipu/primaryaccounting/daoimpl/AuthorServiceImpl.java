@@ -72,7 +72,8 @@ SessionFactory sessionfactory;
         Transaction t = s.getTransaction();
         t.begin();
         Author auhtor = (Author) s.get(Author.class, id);
-        s.delete(auhtor);
+        auhtor.setAuthor_status("Deleted");
+        s.update(auhtor);
         t.commit();
         s.close();
 

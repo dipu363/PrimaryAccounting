@@ -214,7 +214,8 @@
                                             <th> ID</th>
                                             <th> Head name</th>
                                             <th>Parent</th>
-                                            <th>Root </th>    
+                                            <th>Root </th>  
+                                            <th>Status </th> 
                                             <th>Action </th>
 
                                         </tr>
@@ -224,7 +225,8 @@
                                             <th> ID</th>
                                             <th> Head name</th>
                                             <th>Parent</th>
-                                            <th>Root </th>    
+                                            <th>Root </th>
+                                            <th>Status </th> 
                                             <th>Action </th>
                                         </tr>
                                     </tfoot>
@@ -234,7 +236,8 @@
                                             <td>{{head.ac_id}}</td>
                                             <td>{{head.ac_name}}</td>
                                             <td>{{head.ac_parent}}</td>
-                                            <td>{{head.root}}</td>      
+                                            <td>{{head.root}}</td> 
+                                            <td>{{head.status}}</td> 
                                             <td><a href="editbutton?getid={{head.ac_id}}"><button id="editbuttons" type="submit" class="fa fa-pen" style="background:#5897fb; width: 40px; height: 40px"></button></a>  <a  href="removeaccount/{{type.at_id}}"><button id="removebuttons" type="button" class=" fa fa-trash" style="background: red; width: 40px; height: 40px"></button></a>
                                             </td>
                                         </tr>
